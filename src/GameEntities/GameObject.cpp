@@ -15,8 +15,8 @@ GameObject::GameObject(const char* path, SDL_Renderer* renderer,
 
 GameObject::~GameObject()
 {
-	delete texture_;
-	delete renderer_;
+	SDL_DestroyTexture(texture_);
+	SDL_RenderClear(renderer_);
 }
 
 void GameObject::Draw()
