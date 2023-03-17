@@ -15,19 +15,16 @@ protected:
 	int xSpeed_, ySpeed_;
 
 public:
-	GameObject() {};
-	GameObject(const char* path, SDL_Renderer* renderer, 
-		std::pair<int, int> position, std::pair<int, int> size); 
+	GameObject(const char* path, SDL_Renderer* renderer, SDL_Rect objParameters); 
 	~GameObject();
 
-	virtual void Update(int windowWidth, int windowHight) = 0;
-	void Draw();
+	virtual void Draw();
 
 	void getPosition(int &x, int &y);
 	void getSize(int& w, int& h);
 	void getSpeed(int& xSpeed, int& ySpeed);
 
-	void setPosition(int x, int y);
+	void setPosition(double x, double y);
 	void setSize(int w, int h);
 	void setSpeed(int xSpeed, int ySpeed);
 };
