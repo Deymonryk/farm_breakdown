@@ -1,17 +1,21 @@
 #pragma once
 #include "GameObject.h"
 #include "Platform.h"
+#include "Brick.h"
 
 class Ball :  public GameObject
 {
 private:
-
+	void reflectX();
+	void reflectY();
 public:
-	Ball(const char* path, SDL_Renderer* renderer, std::pair<int, int> position, int diameter);
-	void Update(int windowWidth, int windowHight) override;
+	Ball(const char* path, SDL_Renderer* renderer, SDL_Rect objParameters);
+	void Update();
 
-	void CheckBorderCollision(int windowWidth, int windowHight);
-	void CheckPlatformCollision();
-	void CheckBrickCollision();
+	void borderCollision(int maxWidth);
+	void platformCollision(Platform& platform);
+	void brickCollision(Brick& brick);
+
+	bool isGameOver(int deathY);
 };
 

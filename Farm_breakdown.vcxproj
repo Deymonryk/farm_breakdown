@@ -151,21 +151,32 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Scene.cpp" />
+    <ClCompile Include="src\GameStates\Message.cpp" />
+    <ClCompile Include="src\Button.cpp" />
+    <ClCompile Include="src\GameStates\MainMenu.cpp" />
+    <ClCompile Include="src\GameEntities\Brick.cpp" />
+    <ClCompile Include="src\GameStates\Scene.cpp" />
     <ClCompile Include="src\GameEntities\Ball.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\GameEntities\Platform.cpp" />
     <ClCompile Include="src\GameEntities\GameObject.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\TextureManager.cpp" />
+    <ClCompile Include="src\GameStates\WindowState.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Scene.h" />
+    <ClInclude Include="src\GameStates\Message.h" />
+    <ClInclude Include="src\Button.h" />
+    <ClInclude Include="src\States.h" />
+    <ClInclude Include="src\GameStates\MainMenu.h" />
+    <ClInclude Include="src\GameEntities\Brick.h" />
+    <ClInclude Include="src\GameStates\Scene.h" />
     <ClInclude Include="src\GameEntities\Ball.h" />
     <ClInclude Include="src\GameEntities\Platform.h" />
     <ClInclude Include="src\GameEntities\GameObject.h" />
     <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\TextureManager.h" />
+    <ClInclude Include="src\GameStates\WindowState.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

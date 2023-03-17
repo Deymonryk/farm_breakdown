@@ -1,7 +1,11 @@
 #pragma once
 
 #include <iostream>
-#include "Scene.h"
+#include "GameStates/Scene.h"
+#include "States.h"
+#include "GameStates/WindowState.h"
+#include "GameStates/MainMenu.h"
+#include "GameStates/Message.h"
 
 class Window
 {
@@ -12,12 +16,21 @@ private:
 	int width_, height_;
 	bool isRunning_;
 
+	GameState gameState_;
+
 	Scene* scene_;
+	MainMenu* mainMenu_;
+	Message* gameoverMessage_;
+	Message* victoryMessage_;
 
 	void CreateWindow(bool isFullscreen);
 	void CreateRenderer();
 
 	void loadScene();
+	void loadMenu();
+	void loadGameoverMessage();
+	void loadVictoryMessage();
+
 public:
 	Window(int width, int height, bool isFullscreen);
 	~Window();

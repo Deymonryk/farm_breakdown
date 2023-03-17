@@ -1,15 +1,12 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject(const char* path, SDL_Renderer* renderer,
-	std::pair<int, int> position, std::pair<int, int> size)
-	:renderer_(renderer)
+GameObject::GameObject(const char* path, SDL_Renderer* renderer, SDL_Rect objParameters)
+	:renderer_(renderer), dstRect_(objParameters)
 {
 	texture_ = TextureManager::loadTexture(path, renderer_);
 	SDL_QueryTexture(texture_, NULL, NULL, &srcRect_.w, &srcRect_.h);
 
-	setPosition(position.first, position.second);
-	setSize(size.first, size.second);
 	setSpeed(0, 0);
 }
 
@@ -42,22 +39,16 @@ void GameObject::getSpeed(int& xSpeed, int& ySpeed)
 	ySpeed = ySpeed_;
 }
 
-void GameObject::setPosition(int x, int y)
+void GameObject::setPosition(double x, double y)
 {
-	if (x >= 0 && y >= 0)
-	{
-		dstRect_.x = x;
-		dstRect_.y = y;
-	}
+	dstRect_.x = x;
+	dstRect_.y = y;
 }
 
 void GameObject::setSize(int w, int h)
 {
-	if (w >= 1 && h >= 1)
-	{
-		dstRect_.w = w;
-		dstRect_.h = h;
-	}
+	dstRect_.w = w;
+	dstRect_.h = h;
 }
 
 void GameObject::setSpeed(int xSpeed, int ySpeed)

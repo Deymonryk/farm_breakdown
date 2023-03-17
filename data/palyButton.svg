@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg3917"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="palyButton.svg"
+   inkscape:export-filename="palyButtonDark_v2.png"
+   inkscape:export-xdpi="25.314478"
+   inkscape:export-ydpi="25.314478"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview3919"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.4503086"
+     inkscape:cx="101.70249"
+     inkscape:cy="163.06874"
+     inkscape:window-width="958"
+     inkscape:window-height="991"
+     inkscape:window-x="952"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs3914">
+    <rect
+       x="71.708874"
+       y="51.023622"
+       width="24.569038"
+       height="14.338299"
+       id="rect4029" />
+  </defs>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Шар 2">
+    <rect
+       style="display:inline;fill:#c5ced4;fill-opacity:1;stroke-width:0.264583"
+       id="rect3973-1"
+       width="100.33784"
+       height="39.405403"
+       x="0.045607686"
+       y="1.1083014e-06"
+       ry="8.0270281"
+       rx="8.0270271" />
+  </g>
+  <g
+     inkscape:label="Шар 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="display:inline;fill:#0a8484;fill-opacity:1;stroke-width:0.258789"
+       id="rect3973"
+       width="98.969597"
+       height="38.219593"
+       x="0.72972852"
+       y="0.61638087"
+       ry="7.7854738"
+       rx="7.9175677" />
+    <text
+       xml:space="preserve"
+       transform="matrix(3.0621876,0,0,3.0173849,-204.03914,-157.19497)"
+       id="text4027"
+       style="font-size:11.6057px;white-space:pre;shape-inside:url(#rect4029);fill:#cee4e4;fill-opacity:1"><tspan
+         x="71.708984"
+         y="61.935038"
+         id="tspan7616"><tspan
+           style="font-family:'Berlin Sans FB';-inkscape-font-specification:'Berlin Sans FB, Normal'"
+           id="tspan7614">Play</tspan></tspan></text>
+  </g>
+</svg>

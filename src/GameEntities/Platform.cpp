@@ -1,21 +1,17 @@
 #include "Platform.h"
 
-void Platform::CheckBorderCollision(int windowWidth, int windowHight)
+void Platform::CheckBorderCollision(int maxWidth)
 {
-	if (dstRect_.x < 0 || dstRect_.x > windowWidth)
+	if (dstRect_.x < 0 || dstRect_.x > maxWidth)
 	{
 		dstRect_.x = -dstRect_.x;
 	}
 }
 
-Platform::Platform(const char* path, SDL_Renderer* renderer, std::pair<int, int> position, std::pair<int,int> size)
-	:	GameObject(path, renderer, position, size)
+Platform::Platform(const char* path, SDL_Renderer* renderer, 
+	SDL_Rect objParameters, int xSpeed)
+	: GameObject(path, renderer, objParameters)
 {
-	dstRect_.x = position.first - size.first / 2;
-	dstRect_.y = position.second;}
-
-
-void Platform::Update(int windowWidth, int windowHight)
-{
-	CheckBorderCollision(windowWidth, windowHight);
+	xSpeed_ = xSpeed;
 }
+
