@@ -1,12 +1,29 @@
 #include "Scene.h"
 
-void Scene::LoadGameEntities()
+void Scene::LoadGameEntities(GameLevels loadedLevel)
 {
-    LoadBackground("data/22-Breakout-Tiles.png");
-    LoadPlatform("data/50-Breakout-Tiles.png", 160, 40);
-    //ball start position based on platform position -> should be loaded after platform
-    LoadBall("data/58-Breakout-Tiles.png", 40);
-    LoadBricks("data/01-Breakout-Tiles.png", 8, 3);
+    if(loadedLevel== GameLevels::Level1)
+    {
+        LoadBackground("data/background.png");
+        std::vector<const char*> platformTexturePathes = { "data/50-Breakout-Tiles.png" };
+        LoadPlatform(platformTexturePathes, 160, 40);
+        //ball start position based on platform position -> should be loaded after platform
+        std::vector<const char*> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
+        LoadBall(ballTexturePathes, 40);
+        std::vector<const char*> brickTexturePathes = { "data/01-Breakout-Tiles.png" };
+        LoadBricks(brickTexturePathes, 5, 3, SpriteState::ONE_LIFE);
+    }
+    else if(loadedLevel== GameLevels::Level2)
+    {
+        LoadBackground("data/background.png");
+        std::vector<const char*> platformTexturePathes = { "data/50-Breakout-Tiles.png" };
+        LoadPlatform(platformTexturePathes, 160, 40);
+        //ball start position based on platform position -> should be loaded after platform
+        std::vector<const char*> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
+        LoadBall(ballTexturePathes, 40);
+        std::vector<const char*> brickTexturePathes = { "data/box_open.png", "data/box_lid.png"};
+        LoadBricks(brickTexturePathes, 5, 3, SpriteState::TWO_LIVES);
+    }   
 }
 
 void Scene::LoadBackground(const char* path)
@@ -15,7 +32,7 @@ void Scene::LoadBackground(const char* path)
     sceneBackground_ = TextureManager::loadTexture(path, renderer_);
 }
 
-void Scene::LoadPlatform(const char* path, int platformWidth, int platformHeight)
+void Scene::LoadPlatform(std::vector<const char*>path, int platformWidth, int platformHeight)
 {
     //loading player
     if (platformWidth > 0 && platformHeight > 0)
@@ -34,7 +51,7 @@ void Scene::LoadPlatform(const char* path, int platformWidth, int platformHeight
     }
 }
 
-void Scene::LoadBall(const char* path, int ballDiameter)
+void Scene::LoadBall(std::vector<const char*> path, int ballDiameter)
 {
     if (ballDiameter > 0)
     {
@@ -58,7 +75,7 @@ void Scene::LoadBall(const char* path, int ballDiameter)
 
 }
 
-void Scene::LoadBricks(const char* path, int verticalNumber, int horizontalNumber)
+void Scene::LoadBricks(std::vector<const char*> pathes, int verticalNumber, int horizontalNumber, SpriteState spriteScene)
 {
     SDL_Rect brickParam;
     brickParam.w = windowWidth_ / verticalNumber;;
@@ -73,7 +90,7 @@ void Scene::LoadBricks(const char* path, int verticalNumber, int horizontalNumbe
             brickParam.x = verticalStartPoint + i * brickParam.w;
             brickParam.y = j * brickParam.h + 1;
             
-            Brick* brick = new Brick(path, renderer_, brickParam);
+            Brick* brick = new Brick(pathes, renderer_, brickParam, spriteScene);
             if (!brick)
             {
                 std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
@@ -121,11 +138,11 @@ void Scene::CheckBrickCollision()
     }
 }
 
-Scene::Scene(SDL_Renderer* renderer, int wWidth, int wHeight)
+Scene::Scene(SDL_Renderer* renderer, int wWidth, int wHeight, GameLevels selectedLevel)
     : WindowState(renderer), windowWidth_(wWidth), windowHeight_(wHeight)
 {
     sceneState_ = SceneState::INACTIVE;
-    LoadGameEntities();
+    LoadGameEntities(selectedLevel);
 }
 
 Scene::~Scene()

@@ -6,6 +6,7 @@
 #include "GameStates/WindowState.h"
 #include "GameStates/MainMenu.h"
 #include "GameStates/Message.h"
+#include "GameStates/LevelSelectMenu.h"
 
 class Window
 {
@@ -15,13 +16,15 @@ private:
 
 	int width_, height_;
 	bool isRunning_;
-
+		
 	GameState gameState_;
 
 	Scene* scene_;
 	MainMenu* mainMenu_;
 	Message* gameoverMessage_;
 	Message* victoryMessage_;
+	LevelSelectMenu* levelSelectMenu_;
+	GameLevels selectedLevel_;
 
 	void CreateWindow(bool isFullscreen);
 	void CreateRenderer();
@@ -30,6 +33,7 @@ private:
 	void loadMenu();
 	void loadGameoverMessage();
 	void loadVictoryMessage();
+	void loadLevelSelectMenu();
 
 public:
 	Window(int width, int height, bool isFullscreen);

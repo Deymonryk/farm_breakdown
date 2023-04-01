@@ -1,24 +1,27 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject(const char* path, SDL_Renderer* renderer, SDL_Rect objParameters)
+GameObject::GameObject(std::vector <const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters)
 	:renderer_(renderer), dstRect_(objParameters)
 {
-	texture_ = TextureManager::loadTexture(path, renderer_);
-	SDL_QueryTexture(texture_, NULL, NULL, &srcRect_.w, &srcRect_.h);
+	for (auto path : texturePathes)
+	{
+		textures_.push_back(TextureManager::loadTexture(path, renderer_));
+	}
+	SDL_QueryTexture(textures_.at(0), NULL, NULL, &srcRect_.w, &srcRect_.h);
 
 	setSpeed(0, 0);
 }
 
 GameObject::~GameObject()
 {
-	SDL_DestroyTexture(texture_);
+	textures_.clear();
 	SDL_RenderClear(renderer_);
 }
 
 void GameObject::Draw()
 {
-	SDL_RenderCopy(renderer_, texture_, &srcRect_, &dstRect_);
+	SDL_RenderCopy(renderer_, textures_.at(0), &srcRect_, &dstRect_);
 }
 
 void GameObject::getPosition(int& x, int& y)

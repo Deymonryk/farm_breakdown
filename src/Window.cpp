@@ -38,7 +38,7 @@ void Window::CreateRenderer()
 
 void Window::loadScene()
 {
-    scene_ = new Scene(renderer_, width_, height_);
+    scene_ = new Scene(renderer_, width_, height_, selectedLevel_);
     if (!scene_)
     {
         std::cout << "Failed to load scene\n";
@@ -73,10 +73,12 @@ void Window::loadGameoverMessage()
     int buttonsY = msgRect.y + msgRect.h / 2 + verticalMargin;
 
     int restartX = msgRect.x + msgRect.w / 2 + horizontalMargin / 2;
-    Button* restart = new Button("data/restartButtonActive.png", "data/restartButtonInactive.png", renderer_, std::make_pair(restartX, buttonsY));
+    Button* restart = new Button("data/restartButtonActive.png", "data/restartButtonInactive.png", renderer_, 
+        SDL_Rect{ restartX, buttonsY, 50, 50 });
 
     int exitX = msgRect.x + msgRect.w / 2 - horizontalMargin / 2 - 50;
-    Button* exit = new Button("data/exitButtonActive.png", "data/exitButtonInactive.png", renderer_, std::make_pair(exitX, buttonsY));
+    Button* exit = new Button("data/exitButtonActive.png", "data/exitButtonInactive.png", renderer_, 
+        SDL_Rect{ exitX, buttonsY, 50, 50 });
 
     std::map<const char*, Button*> gameverMessageButtons{
         {"restart", restart},
@@ -97,10 +99,12 @@ void Window::loadVictoryMessage()
     int buttonsY = msgRect.y + msgRect.h / 2 + verticalMargin;
 
     int restartX = msgRect.x + msgRect.w / 2 + horizontalMargin / 2;
-    Button* restart = new Button("data/restartButtonActive.png", "data/restartButtonInactive.png", renderer_, std::make_pair(restartX, buttonsY));
+    Button* restart = new Button("data/restartButtonActive.png", "data/restartButtonInactive.png", renderer_,
+        SDL_Rect{ restartX, buttonsY, 50, 50 });
 
     int exitX = msgRect.x + msgRect.w / 2 - horizontalMargin / 2 - 50;
-    Button* exit = new Button("data/exitButtonActive.png", "data/exitButtonInactive.png", renderer_, std::make_pair(exitX, buttonsY));
+    Button* exit = new Button("data/exitButtonActive.png", "data/exitButtonInactive.png", renderer_,
+        SDL_Rect{ exitX, buttonsY, 50, 50 });
 
     std::map<const char*, Button*> gameverMessageButtons{
         {"restart", restart},
@@ -108,6 +112,47 @@ void Window::loadVictoryMessage()
     };
     victoryMessage_ = new Message(renderer_, "data/22-Breakout-Tiles.png", gameverMessageButtons, msgRect);
 }
+
+void Window::loadLevelSelectMenu()
+{
+    SDL_Rect menuRect;
+    menuRect.w = width_ / 2;
+    menuRect.h = height_ / 2 + 20;
+    menuRect.x = width_ / 2 - menuRect.w / 2;
+    menuRect.y = height_ / 2 - menuRect.h / 2;
+
+    int horizontalMargin = 60, veticalMargin = 30;
+    Button* butLvl1 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+        SDL_Rect{ menuRect.x + horizontalMargin / 2, menuRect.y + veticalMargin * 2 , 60, 60 },
+        SDL_Rect{ 0, 0, 139, 139 });
+    Button* butLvl2 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+        SDL_Rect{ menuRect.x + horizontalMargin /2 + 60 + horizontalMargin, menuRect.y + veticalMargin * 2 , 60, 60 },
+        SDL_Rect{ 140, 0, 139, 139});    
+    Button* butLvl3 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+        SDL_Rect{ menuRect.x + horizontalMargin / 2 + (60 + horizontalMargin) * 2, menuRect.y + veticalMargin * 2, 60, 60 },
+        SDL_Rect{ 280, 0, 139, 139});    
+    Button* butLvl4 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+        SDL_Rect{ menuRect.x + horizontalMargin / 2, menuRect.y + veticalMargin * 5 / 3 + 60 + veticalMargin, 60, 60 },
+        SDL_Rect{ 0, 140, 139, 139});    
+    Button* butLvl5 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+        SDL_Rect{ menuRect.x + horizontalMargin / 2 + 60 + horizontalMargin, menuRect.y + veticalMargin * 5 / 3 + 60 + veticalMargin, 60, 60 },
+        SDL_Rect{ 140, 140, 139, 139});    
+    Button* butLvl6 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+        SDL_Rect{ menuRect.x + horizontalMargin / 2 + (60 + horizontalMargin) * 2, menuRect.y + veticalMargin * 5 / 3 + 60 + veticalMargin, 60, 60 },
+        SDL_Rect{ 280, 140, 139, 139 });
+    std::map<const char*, Button*> lvlSelectMenuButtons{
+       {"Level1", butLvl1},
+       {"Level2", butLvl2},
+       {"Level3", butLvl3},
+       {"Level4", butLvl4},
+       {"Level5", butLvl5},
+       {"Level6", butLvl6},
+    };
+
+    levelSelectMenu_ = new LevelSelectMenu(renderer_, "data/levelSelectMenuBackground.png", lvlSelectMenuButtons, menuRect);
+}
+
+   
 
 Window::Window(int width, int height, bool isFullscreen) :
     width_(width),
@@ -117,6 +162,7 @@ Window::Window(int width, int height, bool isFullscreen) :
     CreateRenderer();
 
     loadMenu();
+    loadLevelSelectMenu();
     loadGameoverMessage();
     loadVictoryMessage();
 
@@ -143,11 +189,17 @@ void Window::ProcessInputs()
     {
     case GameState::MAIN_MENU:
         mainMenu_->handleInput(e, gameState_);
+        break;
+
+    case GameState::LEVEL_SELECT_MENU:
+        levelSelectMenu_->handleInput(e, gameState_);
+        selectedLevel_ = levelSelectMenu_->getSelectedLevel();
         if (gameState_ == GameState::SCENE)
         {
             loadScene();
         }
         break;
+
     case GameState::SCENE:
         scene_->handleInput(e, gameState_);
 
@@ -180,6 +232,10 @@ void Window::UpdateWindow()
     {
     case GameState::MAIN_MENU:
         mainMenu_->update();
+        break;
+
+    case GameState::LEVEL_SELECT_MENU:
+        levelSelectMenu_->update();
         break;
 
     case GameState::SCENE:
@@ -220,6 +276,10 @@ void Window::Draw()
     {
     case GameState::MAIN_MENU:
         mainMenu_->draw();
+        break;
+    case GameState::LEVEL_SELECT_MENU:
+        mainMenu_->draw();
+        levelSelectMenu_->draw();
         break;
     case GameState::SCENE:
         scene_->draw();

@@ -6,7 +6,7 @@ class Platform : public GameObject
 {
 private:
 public:
-	Platform(const char* path, SDL_Renderer* renderer, SDL_Rect objParameters, int xSpeed);
+	Platform(std::vector<const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters, int xSpeed);
 	void CheckBorderCollision(int maxWidth);
 };
 

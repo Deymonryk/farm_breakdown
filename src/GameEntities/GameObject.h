@@ -2,11 +2,14 @@
 #include <SDL2/SDL.h>
 #include <utility>
 #include "../TextureManager.h"
+#include "../States.h"
+#include <vector>
+#include "../States.h"
 
 class GameObject
 {
 protected:
-	SDL_Texture* texture_;
+	std::vector <SDL_Texture*> textures_;
 	SDL_Renderer* renderer_;
 
 	//srcRect - position and size of texture in image file
@@ -15,7 +18,7 @@ protected:
 	int xSpeed_, ySpeed_;
 
 public:
-	GameObject(const char* path, SDL_Renderer* renderer, SDL_Rect objParameters); 
+	GameObject(std::vector <const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters);
 	~GameObject();
 
 	virtual void Draw();
