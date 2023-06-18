@@ -10,7 +10,7 @@ pipeline {
         
 	stage('Build') {
             steps {
-                bat 'echo "Builded"'
+                bat 'g++ -o myapp main.cpp'
             }
         }
 
