@@ -1,7 +1,5 @@
 #pragma once
 #include "WindowState.h"
-#include "../Button.h"
-#include <map>
 
 class MainMenu : public WindowState
 {

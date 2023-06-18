@@ -1,26 +1,21 @@
 #include "Button.h"
 
-Button::Button(const char* pathActive, const char* pathInactive, SDL_Renderer* renderer, 
-	std::pair<int, int> position)
+Button::Button(const char* pathActive, const char* pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters)
+	:dstRect_(buttonParameters)
 {
 	hovered_ = false;
 
 	activeTexture_ = TextureManager::loadTexture(pathActive, renderer);
 	inactiveTexture_ = TextureManager::loadTexture(pathInactive, renderer);
+}
 
-	int activeWidth, activeHeight;
-	int inactiveWidth, inactiveHeight;
-	SDL_QueryTexture(activeTexture_, NULL, NULL, &activeWidth, &activeHeight);
-	SDL_QueryTexture(activeTexture_, NULL, NULL, &inactiveWidth, &inactiveHeight);
+Button::Button(const char* pathActive, const char* pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters, SDL_Rect textureParameters)
+	:dstRect_(buttonParameters), srcRect_(textureParameters)
+{
+	hovered_ = false;
 
-	if (activeWidth == inactiveWidth && activeHeight == inactiveHeight)
-	{
-		rect_.w = activeWidth;
-		rect_.h = activeHeight;
-	}
-
-	rect_.x = position.first;
-	rect_.y = position.second;
+	activeTexture_ = TextureManager::loadTexture(pathActive, renderer);
+	inactiveTexture_ = TextureManager::loadTexture(pathInactive, renderer);
 }
 
 Button::~Button()
@@ -33,18 +28,18 @@ void Button::draw(SDL_Renderer* renderer)
 {
 	if (hovered_)
 	{
-		SDL_RenderCopy(renderer, activeTexture_, NULL, &rect_);
+		SDL_RenderCopy(renderer, activeTexture_, NULL, &dstRect_);
 	}
 	else
 	{
-		SDL_RenderCopy(renderer, inactiveTexture_, NULL, &rect_);
+		SDL_RenderCopy(renderer, inactiveTexture_, NULL, &dstRect_);
 	}
 }
 
 void Button::isHovered(int x, int y)
 {
-	if (x <= rect_.x + rect_.w && x >= rect_.x &&
-		y <= rect_.y + rect_.h && y > rect_.y)
+	if (x <= dstRect_.x + dstRect_.w && x >= dstRect_.x &&
+		y <= dstRect_.y + dstRect_.h && y > dstRect_.y)
 	{
 		hovered_ = true;
 	}

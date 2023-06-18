@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameStates\LevelSelectMenu.cpp" />
     <ClCompile Include="src\GameStates\Message.cpp" />
     <ClCompile Include="src\Button.cpp" />
     <ClCompile Include="src\GameStates\MainMenu.cpp" />
@@ -165,15 +166,16 @@
     <ClCompile Include="src\GameStates\WindowState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\GameStates\LevelSelectMenu.h" />
     <ClInclude Include="src\GameStates\Message.h" />
     <ClInclude Include="src\Button.h" />
-    <ClInclude Include="src\States.h" />
     <ClInclude Include="src\GameStates\MainMenu.h" />
     <ClInclude Include="src\GameEntities\Brick.h" />
     <ClInclude Include="src\GameStates\Scene.h" />
     <ClInclude Include="src\GameEntities\Ball.h" />
     <ClInclude Include="src\GameEntities\Platform.h" />
     <ClInclude Include="src\GameEntities\GameObject.h" />
+    <ClInclude Include="src\States.h" />
     <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\TextureManager.h" />
     <ClInclude Include="src\GameStates\WindowState.h" />

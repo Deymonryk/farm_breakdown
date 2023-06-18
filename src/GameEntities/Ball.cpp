@@ -12,8 +12,8 @@ void Ball::reflectY()
 	dstRect_.y += ySpeed_;
 }
 
-Ball::Ball(const char* path, SDL_Renderer* renderer, SDL_Rect objParameters)
-	:GameObject(path, renderer, objParameters)
+Ball::Ball(std::vector<const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters)
+	:GameObject(texturePathes, renderer, objParameters)
 {
 }
 
@@ -75,7 +75,7 @@ void Ball::brickCollision(Brick& brick)
 			{
 				reflectY();
 			}
-			brick.setActivity(false);
+			brick.reduceLives();
 		}
 	}
 }

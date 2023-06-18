@@ -1,6 +1,9 @@
 #pragma once
 #include <SDL2/SDL.h>
 #include "../States.h"
+#include "../Button.h"
+#include "../TextureManager.h"
+#include <map>
 
 class WindowState
 {

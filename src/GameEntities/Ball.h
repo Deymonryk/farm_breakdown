@@ -9,7 +9,7 @@ private:
 	void reflectX();
 	void reflectY();
 public:
-	Ball(const char* path, SDL_Renderer* renderer, SDL_Rect objParameters);
+	Ball(std::vector<const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters);
 	void Update();
 
 	void borderCollision(int maxWidth);

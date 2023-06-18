@@ -6,13 +6,16 @@
 class Button
 {
 protected:
-    SDL_Rect rect_;
+    SDL_Rect dstRect_;
+    SDL_Rect srcRect_;
     SDL_Texture* activeTexture_;
     SDL_Texture* inactiveTexture_;
     bool hovered_;
 public:
-    Button(const char* pathAcrive, const char* pathInactive, SDL_Renderer* renderer, 
-        std::pair<int, int> position);
+    //use if texture file contains single texture
+    Button(const char* pathAcrive, const char* pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters);
+    //use if texture file contains multiple textures: textureParameters used to define textures x, y, w, h
+    Button(const char* pathActive, const char* pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters, SDL_Rect textureParameters);
     ~Button();
 
     bool getHovered() { return hovered_; };

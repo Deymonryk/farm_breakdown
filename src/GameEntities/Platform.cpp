@@ -8,9 +8,9 @@ void Platform::CheckBorderCollision(int maxWidth)
 	}
 }
 
-Platform::Platform(const char* path, SDL_Renderer* renderer, 
+Platform::Platform(std::vector<const char*> texturePathes, SDL_Renderer* renderer,
 	SDL_Rect objParameters, int xSpeed)
-	: GameObject(path, renderer, objParameters)
+	: GameObject(texturePathes, renderer, objParameters)
 {
 	xSpeed_ = xSpeed;
 }
