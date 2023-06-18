@@ -10,13 +10,13 @@ pipeline {
         
 	stage('Build') {
             steps {
-                sh 'mkdir build && cd build && cmake .. && make'
+                bat 'mkdir build && cd build && cmake .. && make'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'cd build && ctest'
+                bat 'cd build && ctest'
             }
         }
         
