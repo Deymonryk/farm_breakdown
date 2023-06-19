@@ -10,7 +10,7 @@ pipeline {
         
 	stage('Build') {
             steps {
-		bat "\"${tool 'MSBuild'}\" /p:Configuration=Release /t:Build Farm_breakdown.sln"
+		bat "\"${tool 'MSBuild'}\" /p:Configuration=Debug /t:Build Farm_breakdown.sln"
                 bat 'echo "Building"'
             }
         }
