@@ -9,6 +9,7 @@ GameObject::GameObject(std::vector <const char*> texturePathes, SDL_Renderer* re
 		textures_.push_back(TextureManager::loadTexture(path, renderer_));
 	}
 	SDL_QueryTexture(textures_.at(0), NULL, NULL, &srcRect_.w, &srcRect_.h);
+	currentTexture = 0;
 
 	setSpeed(0, 0);
 }
@@ -21,7 +22,23 @@ GameObject::~GameObject()
 
 void GameObject::Draw()
 {
-	SDL_RenderCopy(renderer_, textures_.at(0), &srcRect_, &dstRect_);
+	SDL_RenderCopy(renderer_, textures_.at(currentTexture), &srcRect_, &dstRect_);
+}
+
+void GameObject::Update()
+{
+	if(textures_.size() > 1)
+	{
+		int r = rand() % 3;
+		if (r % textures_.size() == 0)
+		{
+			currentTexture++;
+			if (currentTexture >= textures_.size())
+			{
+				currentTexture = 0;
+			}
+		}
+	}
 }
 
 void GameObject::getPosition(int& x, int& y)

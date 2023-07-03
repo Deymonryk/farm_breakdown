@@ -10,6 +10,8 @@ class GameObject
 {
 protected:
 	std::vector <SDL_Texture*> textures_;
+	int currentTexture;
+
 	SDL_Renderer* renderer_;
 
 	//srcRect - position and size of texture in image file
@@ -22,6 +24,7 @@ public:
 	~GameObject();
 
 	virtual void Draw();
+	virtual void Update();
 
 	void getPosition(int &x, int &y);
 	void getSize(int& w, int& h);

@@ -10,7 +10,7 @@ private:
 	void reflectY();
 public:
 	Ball(std::vector<const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters);
-	void Update();
+	void Update() override;
 
 	void borderCollision(int maxWidth);
 	void platformCollision(Platform& platform);

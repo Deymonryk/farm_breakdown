@@ -16,7 +16,7 @@ bool Brick::getActivity()
 
 void Brick::reduceLives()
 {
-	if (spriteState != SpriteState::ZERO_LIFE)
+	if (spriteState != SpriteState::ZERO_LIFE && spriteState != SpriteState::INVULNERABLE)
 	{
 		spriteState = static_cast<SpriteState>(static_cast<int>(spriteState) - 1);
 	}
@@ -40,4 +40,8 @@ void Brick::Draw()
 	default:
 		break;
 	}
+}
+
+void Brick::Update()
+{
 }

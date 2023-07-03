@@ -5,14 +5,14 @@
 #include "../GameEntities/Platform.h"
 #include "../GameEntities/Brick.h"
 #include <vector>
-
+#include "../LevelManager.h"
 
 class Scene : public WindowState
 {
 private:
 	Platform* platform_;
 	Ball* ball_;
-	std::vector<std::vector<Brick*>> brickArray_;
+	std::vector<Brick*> brickArray_;
 	int nActiveBricks_;
 
 	SDL_Texture* sceneBackground_;
@@ -23,9 +23,17 @@ private:
 
 	void LoadGameEntities(GameLevels selectedLevel);
 	void LoadBackground(const char* path);
-	void LoadPlatform(std::vector<const char*> texturePathes, int platformWidth, int platformHeight);
+	void LoadPlatform( int platformWidth, int platformHeight);
 	void LoadBall(std::vector<const char*> texturePathes, int ballDiameter);
-	void LoadBricks(std::vector<const char*> texturePathes, int verticalNumber, int horizontalNumber, SpriteState spriteState);
+
+	void LoadLevel1();
+	void LoadLevel2();
+	void loadLevel2Environment();
+	void loadLevel2Bricks();
+	void LoadLevel3();
+	void LoadLevel4();
+	void LoadLevel5();
+	void LoadLevel6();
 
 	void CheckBorderCollision();
 	void CheckPlatformCollision();

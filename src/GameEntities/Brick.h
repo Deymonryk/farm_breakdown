@@ -11,6 +11,7 @@ public:
 	bool getActivity();
 	void reduceLives();
 	void Draw() override;
+	void Update() override;
 	//void setActivity(bool activity) { isActive_ = activity; };
 };
 
