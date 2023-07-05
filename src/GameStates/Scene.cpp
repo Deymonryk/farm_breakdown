@@ -42,21 +42,42 @@ void Scene::LoadLevel1()
     SDL_Rect brickParam;
     brickParam.w = windowWidth_ / 5;
     brickParam.h = (windowHeight_ * 0.4) / 3;
-    for (int j = 0; j < 3; j++)
+    try
     {
-        for (int i = 0; i < 5; i++)
+        std::ofstream file("gameinfo/level_data/level1.json");
+        json jList;
+        for (int j = 0; j < 3; j++)
         {
-            brickParam.x = i * brickParam.w;
-            brickParam.y = j * brickParam.h + 1;
-
-            Brick* brick = new Brick(brickTexturePathes, renderer_, brickParam, SpriteState::ONE_LIFE);
-            if (!brick)
+            for (int i = 0; i < 5; i++)
             {
-                std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
-                exit(1);
+                brickParam.x = i * brickParam.w;
+                brickParam.y = j * brickParam.h + 1;
+
+                Brick* brick = new Brick(brickTexturePathes, renderer_, brickParam, SpriteState::ONE_LIFE);
+                if (!brick)
+                {
+                    std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+                    exit(1);
+                }
+                brickArray_.push_back(brick);
+
+                //serialize brick
+                json j;
+                j["dstRect"] = { brickParam.x, brickParam.y, brickParam.w, brickParam.h };
+                j["texturePaths"] = brickTexturePathes;
+                // Write the JSON to the file with indentation
+                jList.push_back(j);
             }
-            brickArray_.push_back(brick);
         }
+        if (file.is_open())
+        {
+            file << jList.dump(4);
+            file.close();
+        }
+    }
+    catch (const std::exception&)
+    {
+        std::cout << "Json file wasn't formed" << std::endl;
     }
     nActiveBricks_ = 15;
 }
@@ -171,7 +192,7 @@ void Scene::LoadPlatform(int platformWidth, int platformHeight)
         platParam.y = windowHeight_ - platformHeight;
         platParam.w = platformWidth;
         platParam.h = platformHeight;
-        platform_ = new Platform(platformTexturePathes, renderer_, platParam, windowWidth_/36);
+        platform_ = std::make_unique <Platform>(platformTexturePathes, renderer_, platParam, windowWidth_/36);
     }
     else
     {
@@ -194,7 +215,7 @@ void Scene::LoadBall(std::vector<const char*> path, int ballDiameter)
         ballParam.y = platformY - ballDiameter;
         ballParam.w = ballParam.h = ballDiameter;
 
-        ball_ = new Ball(path, renderer_, ballParam);
+        ball_ = std::make_unique<Ball>(path, renderer_, ballParam);
     }
     else
     {

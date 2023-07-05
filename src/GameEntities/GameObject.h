@@ -5,6 +5,9 @@
 #include "../States.h"
 #include <vector>
 #include "../States.h"
+#include <json.hpp>
+
+using json = nlohmann::json;
 
 class GameObject
 {

@@ -77,3 +77,4 @@ void GameObject::setSpeed(int xSpeed, int ySpeed)
 	ySpeed_ = ySpeed;
 }
 
+

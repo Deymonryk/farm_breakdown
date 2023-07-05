@@ -1,0 +1,167 @@
+[
+    {
+        "dstRect": [
+            0,
+            1,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            144,
+            1,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            288,
+            1,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            432,
+            1,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            576,
+            1,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            0,
+            65,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            144,
+            65,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            288,
+            65,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            432,
+            65,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            576,
+            65,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            0,
+            129,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            144,
+            129,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            288,
+            129,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            432,
+            129,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    },
+    {
+        "dstRect": [
+            576,
+            129,
+            144,
+            64
+        ],
+        "texturePaths": [
+            "data/01-Breakout-Tiles.png"
+        ]
+    }
+]

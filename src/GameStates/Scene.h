@@ -5,13 +5,14 @@
 #include "../GameEntities/Platform.h"
 #include "../GameEntities/Brick.h"
 #include <vector>
-#include "../LevelManager.h"
+#include <json.hpp>
+#include <fstream>
 
 class Scene : public WindowState
 {
 private:
-	Platform* platform_;
-	Ball* ball_;
+	std::unique_ptr<Platform> platform_;
+	std::unique_ptr <Ball> ball_;
 	std::vector<Brick*> brickArray_;
 	int nActiveBricks_;
 
