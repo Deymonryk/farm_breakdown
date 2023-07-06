@@ -11,10 +11,10 @@ using json = nlohmann::json;
 
 class GameObject
 {
-protected:
+protected:	
+	std::vector <const char*> texturePathes_;
 	std::vector <SDL_Texture*> textures_;
 	int currentTexture;
-
 	SDL_Renderer* renderer_;
 
 	//srcRect - position and size of texture in image file
@@ -32,6 +32,7 @@ public:
 	void getPosition(int &x, int &y);
 	void getSize(int& w, int& h);
 	void getSpeed(int& xSpeed, int& ySpeed);
+	std::vector <const char*> getTexturePathes() { return texturePathes_; };
 
 	void setPosition(double x, double y);
 	void setSize(int w, int h);

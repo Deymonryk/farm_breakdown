@@ -4,6 +4,7 @@
 #include "../GameEntities/Ball.h"
 #include "../GameEntities/Platform.h"
 #include "../GameEntities/Brick.h"
+#include "../LevelManager.h"
 #include <vector>
 #include <json.hpp>
 #include <fstream>
@@ -39,6 +40,8 @@ private:
 	void CheckBorderCollision();
 	void CheckPlatformCollision();
 	void CheckBrickCollision();
+
+	void SaveLevel(std::string levelName);
 public:
 	Scene(SDL_Renderer* ren, int wWidth, int wHeight, GameLevels selectedLevel);
 	~Scene();

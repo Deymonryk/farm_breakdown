@@ -25,13 +25,12 @@ void Scene::LoadGameEntities(GameLevels loadedLevel)
     default:
         break;
     }
+    SaveLevel(LevelsToString(loadedLevel));
 }
 
 void Scene::LoadLevel1()
 {
-    LoadBackground("data/background.png");
-
-    
+    LoadBackground("data/background.png");  
     LoadPlatform( 160, 40);
 
     //ball start position based on platform position -> should be loaded after platform
@@ -42,42 +41,22 @@ void Scene::LoadLevel1()
     SDL_Rect brickParam;
     brickParam.w = windowWidth_ / 5;
     brickParam.h = (windowHeight_ * 0.4) / 3;
-    try
+    std::ofstream file("gameinfo/level_data/level1.json");
+    for (int j = 0; j < 3; j++)
     {
-        std::ofstream file("gameinfo/level_data/level1.json");
-        json jList;
-        for (int j = 0; j < 3; j++)
+        for (int i = 0; i < 5; i++)
         {
-            for (int i = 0; i < 5; i++)
+            brickParam.x = i * brickParam.w;
+            brickParam.y = j * brickParam.h + 1;
+
+            Brick* brick = new Brick(brickTexturePathes, renderer_, brickParam, SpriteState::ONE_LIFE);
+            if (!brick)
             {
-                brickParam.x = i * brickParam.w;
-                brickParam.y = j * brickParam.h + 1;
-
-                Brick* brick = new Brick(brickTexturePathes, renderer_, brickParam, SpriteState::ONE_LIFE);
-                if (!brick)
-                {
-                    std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
-                    exit(1);
-                }
-                brickArray_.push_back(brick);
-
-                //serialize brick
-                json j;
-                j["dstRect"] = { brickParam.x, brickParam.y, brickParam.w, brickParam.h };
-                j["texturePaths"] = brickTexturePathes;
-                // Write the JSON to the file with indentation
-                jList.push_back(j);
+                std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+                exit(1);
             }
+            brickArray_.push_back(brick);
         }
-        if (file.is_open())
-        {
-            file << jList.dump(4);
-            file.close();
-        }
-    }
-    catch (const std::exception&)
-    {
-        std::cout << "Json file wasn't formed" << std::endl;
     }
     nActiveBricks_ = 15;
 }
@@ -256,7 +235,19 @@ void Scene::CheckBrickCollision()
     }
 }
 
+void Scene::SaveLevel(std::string levelName)
+{
+    std::string savesLocation = "gameinfo/level_data/";
 
+    std::string platformFilePath = savesLocation + levelName + "platform.json";
+    LevelManager::LoadPlatformToJSON(platformFilePath, platform_);
+
+    std::string ballFilePath = savesLocation + levelName + "ball.json";
+    LevelManager::LoadBallToJSON(ballFilePath, ball_);
+
+    std::string bricksFilePath = savesLocation + levelName + "bricks.json";
+    LevelManager::LoadBricksToJSON(bricksFilePath, brickArray_);
+}
 
 Scene::Scene(SDL_Renderer* renderer, int wWidth, int wHeight, GameLevels selectedLevel)
     : WindowState(renderer), windowWidth_(wWidth), windowHeight_(wHeight)
