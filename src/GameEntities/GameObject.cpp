@@ -1,7 +1,7 @@
 #include "GameObject.h"
 
 
-GameObject::GameObject(std::vector <const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters)
+GameObject::GameObject(std::vector <std::string> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters)
 	:renderer_(renderer), dstRect_(objParameters), texturePathes_(texturePathes)
 {
 	for (auto path : texturePathes)

@@ -1,6 +1,6 @@
 #include "Message.h"
 
-Message::Message(SDL_Renderer* renderer, const char* path, std::map<const char*, Button*> buttons, SDL_Rect messageParameters)
+Message::Message(SDL_Renderer* renderer, std::string path, std::map<std::string, Button*> buttons, SDL_Rect messageParameters)
 	:WindowState(renderer), buttons_(buttons), dest_(messageParameters)
 {
 	backgroundTexture_ = TextureManager::loadTexture(path, renderer_);

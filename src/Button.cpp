@@ -1,6 +1,6 @@
 #include "Button.h"
 
-Button::Button(const char* pathActive, const char* pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters)
+Button::Button(std::string pathActive, std::string pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters)
 	:dstRect_(buttonParameters)
 {
 	hovered_ = false;
@@ -9,7 +9,7 @@ Button::Button(const char* pathActive, const char* pathInactive, SDL_Renderer* r
 	inactiveTexture_ = TextureManager::loadTexture(pathInactive, renderer);
 }
 
-Button::Button(const char* pathActive, const char* pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters, SDL_Rect textureParameters)
+Button::Button(std::string pathActive, std::string pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters, SDL_Rect textureParameters)
 	:dstRect_(buttonParameters), srcRect_(textureParameters)
 {
 	hovered_ = false;

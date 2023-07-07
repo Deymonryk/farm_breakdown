@@ -13,9 +13,9 @@ protected:
     bool hovered_;
 public:
     //use if texture file contains single texture
-    Button(const char* pathAcrive, const char* pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters);
+    Button(std::string pathAcrive, std::string pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters);
     //use if texture file contains multiple textures: textureParameters used to define textures x, y, w, h
-    Button(const char* pathActive, const char* pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters, SDL_Rect textureParameters);
+    Button(std::string pathActive, std::string pathInactive, SDL_Renderer* renderer, SDL_Rect buttonParameters, SDL_Rect textureParameters);
     ~Button();
 
     bool getHovered() { return hovered_; };

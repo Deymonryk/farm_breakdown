@@ -1,6 +1,6 @@
 #include "LevelSelectMenu.h"
 
-LevelSelectMenu::LevelSelectMenu(SDL_Renderer* renderer, const char* path, std::map<const char*, Button*> buttons, SDL_Rect menuParameters)
+LevelSelectMenu::LevelSelectMenu(SDL_Renderer* renderer, std::string path, std::map<std::string, Button*> buttons, SDL_Rect menuParameters)
 	:WindowState(renderer), buttons_(buttons), dest_(menuParameters)
 {
 	backgroundTexture_ = TextureManager::loadTexture(path, renderer_);

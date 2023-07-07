@@ -7,7 +7,7 @@ private:
 	//bool isActive_;
 	SpriteState spriteState;
 public:
-	Brick(std::vector <const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters, SpriteState state);
+	Brick(std::vector <std::string> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters, SpriteState state);
 
 	void reduceLives();
 	void Draw() override;

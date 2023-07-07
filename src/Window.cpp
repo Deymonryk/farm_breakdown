@@ -80,7 +80,7 @@ void Window::loadGameoverMessage()
     Button* exit = new Button("data/exitButtonActive.png", "data/exitButtonInactive.png", renderer_, 
         SDL_Rect{ exitX, buttonsY, 50, 50 });
 
-    std::map<const char*, Button*> gameverMessageButtons{
+    std::map<std::string, Button*> gameverMessageButtons{
         {"restart", restart},
         {"menu", exit}
     };
@@ -106,7 +106,7 @@ void Window::loadVictoryMessage()
     Button* exit = new Button("data/exitButtonActive.png", "data/exitButtonInactive.png", renderer_,
         SDL_Rect{ exitX, buttonsY, 50, 50 });
 
-    std::map<const char*, Button*> gameverMessageButtons{
+    std::map<std::string, Button*> gameverMessageButtons{
         {"restart", restart},
         {"menu", exit}
     };
@@ -140,7 +140,7 @@ void Window::loadLevelSelectMenu()
     Button* butLvl6 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
         SDL_Rect{ menuRect.x + horizontalMargin / 2 + (60 + horizontalMargin) * 2, menuRect.y + veticalMargin * 5 / 3 + 60 + veticalMargin, 60, 60 },
         SDL_Rect{ 280, 140, 139, 139 });
-    std::map<const char*, Button*> lvlSelectMenuButtons{
+    std::map<std::string, Button*> lvlSelectMenuButtons{
        {"Level1", butLvl1},
        {"Level2", butLvl2},
        {"Level3", butLvl3},

@@ -1,6 +1,6 @@
 #include "Brick.h"
 
-Brick::Brick(std::vector <const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters, SpriteState state)
+Brick::Brick(std::vector <std::string> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters, SpriteState state)
 	:GameObject(texturePathes, renderer, objParameters), spriteState(state)
 {
 }

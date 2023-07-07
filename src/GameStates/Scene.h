@@ -24,9 +24,9 @@ private:
 	SceneState sceneState_;
 
 	void LoadGameEntities(GameLevels selectedLevel);
-	void LoadBackground(const char* path);
+	void LoadBackground(std::string path);
 	void LoadPlatform( int platformWidth, int platformHeight);
-	void LoadBall(std::vector<const char*> texturePathes, int ballDiameter);
+	void LoadBall(std::vector<std::string> texturePathes, int ballDiameter);
 
 	void LoadLevel1();
 	void LoadLevel2();
@@ -41,7 +41,8 @@ private:
 	void CheckPlatformCollision();
 	void CheckBrickCollision();
 
-	void SaveLevel(std::string levelName);
+	void SaveLevelToJSON(std::string levelName);
+	void LoadLevelFromJSON(std::string levelName);
 public:
 	Scene(SDL_Renderer* ren, int wWidth, int wHeight, GameLevels selectedLevel);
 	~Scene();

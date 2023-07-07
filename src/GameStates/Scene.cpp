@@ -25,7 +25,7 @@ void Scene::LoadGameEntities(GameLevels loadedLevel)
     default:
         break;
     }
-    SaveLevel(LevelsToString(loadedLevel));
+    //SaveLevelToJSON(LevelsToString(loadedLevel));
 }
 
 void Scene::LoadLevel1()
@@ -34,10 +34,10 @@ void Scene::LoadLevel1()
     LoadPlatform( 160, 40);
 
     //ball start position based on platform position -> should be loaded after platform
-    std::vector<const char*> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
+    std::vector<std::string> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
     LoadBall(ballTexturePathes, 40);
 
-    std::vector<const char*> brickTexturePathes = { "data/01-Breakout-Tiles.png" };
+    std::vector<std::string> brickTexturePathes = { "data/01-Breakout-Tiles.png" };
     SDL_Rect brickParam;
     brickParam.w = windowWidth_ / 5;
     brickParam.h = (windowHeight_ * 0.4) / 3;
@@ -64,19 +64,22 @@ void Scene::LoadLevel1()
 void Scene::LoadLevel2()
 {
     LoadBackground("data/background.png");
-    std::vector<const char*> platformTexturePathes = { "data/50-Breakout-Tiles.png" };
+    std::vector<std::string> platformTexturePathes = { "data/50-Breakout-Tiles.png" };
+    LoadLevelFromJSON("level2");
+
     LoadPlatform( 160, 40);
     //ball start position based on platform position -> should be loaded after platform
-    std::vector<const char*> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
+    /*std::vector<std::string> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
     LoadBall(ballTexturePathes, 40);
 
     loadLevel2Environment();
-    loadLevel2Bricks();
+    loadLevel2Bricks();*/
+    nActiveBricks_ = 15;
 }
 
 void Scene::loadLevel2Environment()
 {
-    std::vector<const char*> cornerBrickTexturePathes = { "data/column_corner.png" };
+    std::vector<std::string> cornerBrickTexturePathes = { "data/column_corner.png" };
     SDL_Rect leftCornerColumnParam{ 0, 0, 38, 26 };
     Brick* leftCornerColumn = new Brick(cornerBrickTexturePathes, renderer_, leftCornerColumnParam, SpriteState::INVULNERABLE);
     SDL_Rect rightCornerColumnParam{ windowWidth_ - 38, 0, 38, 26 };
@@ -88,7 +91,7 @@ void Scene::loadLevel2Environment()
     }
 
     int backColumnMargin = (windowWidth_ - leftCornerColumnParam.w) / 3;
-    std::vector<const char*> backBrickTexturePathes = { "data/column_back.png" };
+    std::vector<std::string> backBrickTexturePathes = { "data/column_back.png" };
     SDL_Rect leftBackColumnParam{ backColumnMargin - 34, 0, 68, 26 };
     Brick* leftBackColumn = new Brick(backBrickTexturePathes, renderer_, leftBackColumnParam, SpriteState::INVULNERABLE);
     SDL_Rect rightBackColumnParam{ backColumnMargin + leftBackColumnParam.x, 0, 68, 26 };
@@ -99,7 +102,7 @@ void Scene::loadLevel2Environment()
         brickArray_.push_back(rightBackColumn);
     }
 
-    std::vector<const char*> sideBrickTexturePathes = { "data/column_side.png" };
+    std::vector<std::string> sideBrickTexturePathes = { "data/column_side.png" };
     SDL_Rect leftSideColumnParam{ 0, windowHeight_ * 0.5 - 69, 14, 69 };
     Brick* leftSideColumn = new Brick(sideBrickTexturePathes, renderer_, leftSideColumnParam, SpriteState::INVULNERABLE);
     SDL_Rect rightSideColumnParam{ windowWidth_ - 14, windowHeight_ * 0.5 - 69, 14, 69 };
@@ -113,7 +116,7 @@ void Scene::loadLevel2Environment()
 
 void Scene::loadLevel2Bricks()
 {
-    std::vector<const char*> brickTexturePathes = { "data/box_open.png", "data/box_lid.png" };
+    std::vector<std::string> brickTexturePathes = { "data/box_open.png", "data/box_lid.png" };
     std::pair<int, int>brickFieldSize(windowWidth_ - 14 * 2, windowHeight_ - 26);
 
     SDL_Rect brickParam;
@@ -135,7 +138,6 @@ void Scene::loadLevel2Bricks()
             brickArray_.push_back(brick);
         }
     }
-    nActiveBricks_ = 15;
 }
 
 void Scene::LoadLevel3()
@@ -154,7 +156,7 @@ void Scene::LoadLevel6()
 {
 }
 
-void Scene::LoadBackground(const char* path)
+void Scene::LoadBackground(std::string path)
 {
     //loading background
     sceneBackground_ = TextureManager::loadTexture(path, renderer_);
@@ -162,7 +164,7 @@ void Scene::LoadBackground(const char* path)
 
 void Scene::LoadPlatform(int platformWidth, int platformHeight)
 {
-    std::vector<const char*> platformTexturePathes = { "data/50-Breakout-Tiles.png", "data/51-Breakout-Tiles.png", "data/52-Breakout-Tiles.png" };
+    std::vector<std::string> platformTexturePathes = { "data/50-Breakout-Tiles.png", "data/51-Breakout-Tiles.png", "data/52-Breakout-Tiles.png" };
     //loading player
     if (platformWidth > 0 && platformHeight > 0)
     {
@@ -180,7 +182,7 @@ void Scene::LoadPlatform(int platformWidth, int platformHeight)
     }
 }
 
-void Scene::LoadBall(std::vector<const char*> path, int ballDiameter)
+void Scene::LoadBall(std::vector<std::string> path, int ballDiameter)
 {
     if (ballDiameter > 0)
     {
@@ -235,7 +237,7 @@ void Scene::CheckBrickCollision()
     }
 }
 
-void Scene::SaveLevel(std::string levelName)
+void Scene::SaveLevelToJSON(std::string levelName)
 {
     std::string savesLocation = "gameinfo/level_data/";
 
@@ -247,6 +249,20 @@ void Scene::SaveLevel(std::string levelName)
 
     std::string bricksFilePath = savesLocation + levelName + "bricks.json";
     LevelManager::LoadBricksToJSON(bricksFilePath, brickArray_);
+}
+
+void Scene::LoadLevelFromJSON(std::string levelName)
+{
+    std::string savesLocation = "gameinfo/level_data/";
+
+    std::string platformFilePath = savesLocation + levelName + "platform.json";
+    platform_ = LevelManager::LoadPlatformFromJSON(platformFilePath, renderer_);
+
+    std::string ballFilePath = savesLocation + levelName + "ball.json";
+    ball_ = LevelManager::LoadBallFromJSON(ballFilePath, renderer_);
+
+    std::string bricksFilePath = savesLocation + levelName + "bricks.json";
+    brickArray_ = LevelManager::LoadBricksFromJSON(bricksFilePath, renderer_);
 }
 
 Scene::Scene(SDL_Renderer* renderer, int wWidth, int wHeight, GameLevels selectedLevel)

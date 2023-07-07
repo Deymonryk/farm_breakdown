@@ -12,7 +12,7 @@ void Ball::reflectY()
 	dstRect_.y += ySpeed_;
 }
 
-Ball::Ball(std::vector<const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters)
+Ball::Ball(std::vector<std::string> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters)
 	:GameObject(texturePathes, renderer, objParameters)
 {
 }
