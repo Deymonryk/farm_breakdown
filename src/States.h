@@ -22,6 +22,16 @@ enum class SpriteState {
 	INVULNERABLE
 };
 
+constexpr const int SpriteStateToInt(SpriteState e) throw()
+{
+	switch (e)
+	{
+	case SpriteState::ZERO_LIFE: return 0;
+	case SpriteState::ONE_LIFE: return 1;
+	case SpriteState::TWO_LIVES: return 2;
+	case SpriteState::INVULNERABLE: return 999;
+	}
+}
 enum class GameLevels {
 	Level1,
 	Level2,

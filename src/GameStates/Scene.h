@@ -33,6 +33,7 @@ private:
 	void loadLevel2Environment();
 	void loadLevel2Bricks();
 	void LoadLevel3();
+	void LoadLevel3LongFences(int nBricks, int &currentX);
 	void LoadLevel4();
 	void LoadLevel5();
 	void LoadLevel6();

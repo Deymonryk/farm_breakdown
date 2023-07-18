@@ -142,6 +142,85 @@ void Scene::loadLevel2Bricks()
 
 void Scene::LoadLevel3()
 {
+    LoadBackground("data/planting_background.png");
+    LoadPlatform(160, 40); 
+    std::vector<std::string> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
+    LoadBall(ballTexturePathes, 40);
+
+    //load fence bricks
+    int currentXpos = 0;
+    LoadLevel3LongFences(3, currentXpos);
+    std::vector<std::string> brickShortFenceTexturePathes = { "data/fence1.png", "data/fence_outline1.png" };
+    SDL_Rect brickParamShort{ currentXpos, 0, 55, 60 };
+    Brick* brick = new Brick(brickShortFenceTexturePathes, renderer_, brickParamShort, SpriteState::ONE_LIFE, true);
+    if (!brick)
+    {
+        std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+        exit(1);
+    }
+    currentXpos += brickParamShort.w;
+    nActiveBricks_++;
+    brickArray_.push_back(brick);
+    LoadLevel3LongFences(3, currentXpos);
+    
+    //load paving bricks
+    int pavingWidth = windowWidth_ / 13;
+    SDL_Rect brickParamPaving{ 0, 61, pavingWidth, 50 };
+    std::vector<std::string> brickPavingPathes = { "data/paving.png", "data/paving_outline.png" };
+    currentXpos = 0;
+    for (int j = 0; j < 3; j++)
+    {
+        for (int i = 0; i < 13; i++)
+        {
+            if(i%3==0)
+            {
+                brickParamPaving.x = currentXpos;
+                Brick* brick = new Brick(brickPavingPathes, renderer_, brickParamPaving, SpriteState::ONE_LIFE, true);
+                if (!brick)
+                {
+                    std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+                    exit(1);
+                }
+                nActiveBricks_++;
+                brickArray_.push_back(brick);
+            }
+            currentXpos += pavingWidth;
+        }
+        brickParamPaving.y += 50;
+        currentXpos = 0;
+    }
+    for (int i = 0; i < 13; i++)
+    {
+        brickParamPaving.x = currentXpos;
+        Brick* brick = new Brick(brickPavingPathes, renderer_, brickParamPaving, SpriteState::ONE_LIFE, true);
+        if (!brick)
+        {
+            std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+            exit(1);
+        }
+        nActiveBricks_++;
+        brickArray_.push_back(brick);
+        currentXpos += pavingWidth;
+    }
+}
+
+void Scene::LoadLevel3LongFences(int nBricks, int &currentX)
+{
+    std::vector<std::string> brickLongFenceTexturePathes = { "data/fence2.png", "data/fence_outline2.png" };
+    SDL_Rect brickParamLong{ 0, 0, 110, 60 };
+    for (int i = 0; i < nBricks; i++)
+    {
+        brickParamLong.x = currentX;
+        Brick* brick = new Brick(brickLongFenceTexturePathes, renderer_, brickParamLong, SpriteState::ONE_LIFE, true);
+        if (!brick)
+        {
+            std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+            exit(1);
+        }
+        currentX += brickParamLong.w;
+        nActiveBricks_++;
+        brickArray_.push_back(brick);
+    }
 }
 
 void Scene::LoadLevel4()
