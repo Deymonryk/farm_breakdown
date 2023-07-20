@@ -4,7 +4,6 @@
 class Brick : public GameObject
 {
 private:
-	//bool isActive_;
 	SpriteState spriteState_;
 	bool isZeroLiveTexture_;
 public:
@@ -17,6 +16,6 @@ public:
 
 	bool getActivity();
 	SpriteState getSpriteState() { return spriteState_; }
-	//void setActivity(bool activity) { isActive_ = activity; };
+	bool isZeroLifeTexture() { return isZeroLiveTexture_; }
 };
 

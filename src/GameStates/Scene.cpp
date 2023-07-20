@@ -25,7 +25,6 @@ void Scene::LoadGameEntities(GameLevels loadedLevel)
     default:
         break;
     }
-    //SaveLevelToJSON(LevelsToString(loadedLevel));
 }
 
 void Scene::LoadLevel1()
@@ -74,7 +73,6 @@ void Scene::LoadLevel2()
 
     loadLevel2Environment();
     loadLevel2Bricks();*/
-    nActiveBricks_ = 15;
 }
 
 void Scene::loadLevel2Environment()
@@ -143,12 +141,16 @@ void Scene::loadLevel2Bricks()
 void Scene::LoadLevel3()
 {
     LoadBackground("data/planting_background.png");
+    LoadLevelFromJSON("level3");
+    /*
     LoadPlatform(160, 40); 
     std::vector<std::string> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
     LoadBall(ballTexturePathes, 40);
 
+    int startPosition = 3;
+    int currentXpos = startPosition;
+
     //load fence bricks
-    int currentXpos = 0;
     LoadLevel3LongFences(3, currentXpos);
     std::vector<std::string> brickShortFenceTexturePathes = { "data/fence1.png", "data/fence_outline1.png" };
     SDL_Rect brickParamShort{ currentXpos, 0, 55, 60 };
@@ -164,10 +166,11 @@ void Scene::LoadLevel3()
     LoadLevel3LongFences(3, currentXpos);
     
     //load paving bricks
-    int pavingWidth = windowWidth_ / 13;
-    SDL_Rect brickParamPaving{ 0, 61, pavingWidth, 50 };
+    int pavingWidth = windowWidth_ / 13 - 2;
+    int margin = pavingWidth + 2;
+    SDL_Rect brickParamPaving{ 0, 61, pavingWidth, 51 };
     std::vector<std::string> brickPavingPathes = { "data/paving.png", "data/paving_outline.png" };
-    currentXpos = 0;
+    currentXpos = startPosition;
     for (int j = 0; j < 3; j++)
     {
         for (int i = 0; i < 13; i++)
@@ -184,10 +187,10 @@ void Scene::LoadLevel3()
                 nActiveBricks_++;
                 brickArray_.push_back(brick);
             }
-            currentXpos += pavingWidth;
+            currentXpos += margin;
         }
-        brickParamPaving.y += 50;
-        currentXpos = 0;
+        brickParamPaving.y += margin;
+        currentXpos = startPosition;
     }
     for (int i = 0; i < 13; i++)
     {
@@ -200,8 +203,10 @@ void Scene::LoadLevel3()
         }
         nActiveBricks_++;
         brickArray_.push_back(brick);
-        currentXpos += pavingWidth;
+        currentXpos += margin;
     }
+    SaveLevelToJSON("level3");
+    */
 }
 
 void Scene::LoadLevel3LongFences(int nBricks, int &currentX)
@@ -341,7 +346,7 @@ void Scene::LoadLevelFromJSON(std::string levelName)
     ball_ = LevelManager::LoadBallFromJSON(ballFilePath, renderer_);
 
     std::string bricksFilePath = savesLocation + levelName + "bricks.json";
-    brickArray_ = LevelManager::LoadBricksFromJSON(bricksFilePath, renderer_);
+    brickArray_ = LevelManager::LoadBricksFromJSON(bricksFilePath, renderer_, nActiveBricks_);
 }
 
 Scene::Scene(SDL_Renderer* renderer, int wWidth, int wHeight, GameLevels selectedLevel)

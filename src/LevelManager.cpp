@@ -18,6 +18,7 @@ void LevelManager::LoadBricksToJSON(std::string filePath, std::vector<Brick*> br
 			j["dstRect"] = { x, y, w, h };
 			j["state"] = brick->getSpriteState();
 			j["texturePaths"] = brick->getTexturePathes();
+			j["zeroLifeTexture"] = brick->isZeroLifeTexture();
 
 			// Write the JSON to the file with indentation
 			jList.push_back(j);
@@ -84,7 +85,7 @@ void LevelManager::LoadBallToJSON(std::string filePath, std::unique_ptr<Ball> & 
 	}
 }
 
-std::vector<Brick*> LevelManager::LoadBricksFromJSON(std::string filePath, SDL_Renderer* renderer)
+std::vector<Brick*> LevelManager::LoadBricksFromJSON(std::string filePath, SDL_Renderer* renderer, int& nActiveBricks)
 {
 	std::ifstream file(filePath);
 	json data = json::parse(file);
@@ -98,10 +99,19 @@ std::vector<Brick*> LevelManager::LoadBricksFromJSON(std::string filePath, SDL_R
 		int w = brickData["dstRect"][2];
 		int h = brickData["dstRect"][3];
 		SpriteState state = brickData["state"];
+		if (state != SpriteState::ZERO_LIFE && state != SpriteState::INVULNERABLE)
+		{
+			nActiveBricks++;
+		}
+		bool isZeroLifeTexture = false;
+		if (brickData.contains("zeroLifeTexture"))
+		{
+			isZeroLifeTexture = brickData["zeroLifeTexture"];
+		}
 
 		// Convert the JSON array to std::vector<std::string>
 		std::vector<std::string> texturePaths = brickData["texturePaths"].get<std::vector<std::string>>();
-		Brick* brick = new Brick(texturePaths, renderer, SDL_Rect { x,y,w,h }, state);
+		Brick* brick = new Brick(texturePaths, renderer, SDL_Rect { x,y,w,h }, state, isZeroLifeTexture);
 		bricks.push_back(brick);
 	}
 	return bricks;
