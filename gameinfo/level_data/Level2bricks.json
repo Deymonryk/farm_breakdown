@@ -7,9 +7,9 @@
             26
         ],
         "state": 3,
-        "texturePaths": [
-            "data/column_corner.png"
-        ]
+      "texturePaths": [
+        "data/level2/column_corner.png"
+      ]
     },
     {
         "dstRect": [
@@ -19,9 +19,9 @@
             26
         ],
         "state": 3,
-        "texturePaths": [
-            "data/column_corner.png"
-        ]
+      "texturePaths": [
+        "data/level2/column_corner.png"
+      ]
     },
     {
         "dstRect": [
@@ -31,9 +31,9 @@
             26
         ],
         "state": 3,
-        "texturePaths": [
-            "data/column_back.png"
-        ]
+      "texturePaths": [
+        "data/level2/column_back.png"
+      ]
     },
     {
         "dstRect": [
@@ -43,9 +43,9 @@
             26
         ],
         "state": 3,
-        "texturePaths": [
-            "data/column_back.png"
-        ]
+      "texturePaths": [
+        "data/level2/column_back.png"
+      ]
     },
     {
         "dstRect": [
@@ -55,9 +55,9 @@
             69
         ],
         "state": 3,
-        "texturePaths": [
-            "data/column_side.png"
-        ]
+      "texturePaths": [
+        "data/level2/column_side.png"
+      ]
     },
     {
         "dstRect": [
@@ -67,9 +67,9 @@
             69
         ],
         "state": 3,
-        "texturePaths": [
-            "data/column_side.png"
-        ]
+      "texturePaths": [
+        "data/level2/column_side.png"
+      ]
     },
     {
         "dstRect": [
@@ -79,10 +79,10 @@
             60
         ],
         "state": 2,
-        "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
-        ]
+      "texturePaths": [
+        "data/level2/box_open.png",
+        "data/level2/box_lid.png"
+      ]
     },
     {
         "dstRect": [
@@ -92,10 +92,10 @@
             60
         ],
         "state": 2,
-        "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
-        ]
+      "texturePaths": [
+        "data/level2/box_open.png",
+        "data/level2/box_lid.png"
+      ]
     },
     {
         "dstRect": [
@@ -105,10 +105,10 @@
             60
         ],
         "state": 2,
-        "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
-        ]
+      "texturePaths": [
+        "data/level2/box_open.png",
+        "data/level2/box_lid.png"
+      ]
     },
     {
         "dstRect": [
@@ -118,10 +118,10 @@
             60
         ],
         "state": 2,
-        "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
-        ]
+      "texturePaths": [
+        "data/level2/box_open.png",
+        "data/level2/box_lid.png"
+      ]
     },
     {
         "dstRect": [
@@ -132,8 +132,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -145,8 +145,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -158,8 +158,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -171,8 +171,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -184,8 +184,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -197,8 +197,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -210,8 +210,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -223,8 +223,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -236,8 +236,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -249,8 +249,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     },
     {
@@ -262,8 +262,8 @@
         ],
         "state": 2,
         "texturePaths": [
-            "data/box_open.png",
-            "data/box_lid.png"
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
         ]
     }
 ]

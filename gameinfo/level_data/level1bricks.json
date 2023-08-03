@@ -1,182 +1,197 @@
 [
     {
         "dstRect": [
+            30,
             0,
-            1,
-            144,
-            64
+            120,
+            114
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf1_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            144,
-            1,
-            144,
-            64
+            210,
+            0,
+            120,
+            114
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf2_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            288,
-            1,
-            144,
-            64
+            390,
+            0,
+            120,
+            114
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf3_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            432,
-            1,
-            144,
-            64
+            570,
+            0,
+            120,
+            114
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
-    },
-    {
-        "dstRect": [
-            576,
-            1,
-            144,
-            64
+            "data/level1/shelf4_dusty.png"
         ],
-        "state": 1,
-        "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
             0,
-            65,
-            144,
-            64
+            55,
+            30,
+            133
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf_left_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            144,
-            65,
-            144,
-            64
+            150,
+            55,
+            30,
+            133
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf_right_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            288,
-            65,
-            144,
-            64
+            180,
+            55,
+            30,
+            133
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf_left_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            432,
-            65,
-            144,
-            64
+            330,
+            55,
+            30,
+            133
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf_right_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            576,
-            65,
-            144,
-            64
+            360,
+            55,
+            30,
+            133
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf_left_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            0,
-            129,
-            144,
-            64
+            510,
+            55,
+            30,
+            133
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf_right_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            144,
-            129,
-            144,
-            64
+            540,
+            55,
+            30,
+            133
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf_left_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            288,
-            129,
-            144,
-            64
+            690,
+            55,
+            30,
+            133
         ],
         "state": 1,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/shelf_right_dusty.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            432,
-            129,
-            144,
-            64
+            2,
+            171,
+            30,
+            46
         ],
-        "state": 1,
+        "state": 3,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/barrel.png"
+        ],
+        "zeroLifeTexture": false
     },
     {
         "dstRect": [
-            576,
-            129,
-            144,
-            64
+            149,
+            163,
+            64,
+            73
         ],
-        "state": 1,
+        "state": 3,
         "texturePaths": [
-            "data/01-Breakout-Tiles.png"
-        ]
+            "data/level1/boxes.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            513,
+            175,
+            60,
+            50
+        ],
+        "state": 3,
+        "texturePaths": [
+            "data/level1/wood_pile.png"
+        ],
+        "zeroLifeTexture": false
     }
 ]

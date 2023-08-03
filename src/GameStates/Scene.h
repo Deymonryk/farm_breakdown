@@ -19,7 +19,6 @@ private:
 
 	SDL_Texture* sceneBackground_;
 	int windowWidth_, windowHeight_;
-
 	
 	SceneState sceneState_;
 
@@ -30,10 +29,7 @@ private:
 
 	void LoadLevel1();
 	void LoadLevel2();
-	void loadLevel2Environment();
-	void loadLevel2Bricks();
 	void LoadLevel3();
-	void LoadLevel3LongFences(int nBricks, int &currentX);
 	void LoadLevel4();
 	void LoadLevel5();
 	void LoadLevel6();

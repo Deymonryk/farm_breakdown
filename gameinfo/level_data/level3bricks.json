@@ -8,8 +8,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/fence2.png",
-            "data/fence_outline2.png"
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
         ],
         "zeroLifeTexture": true
     },
@@ -22,8 +22,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/fence2.png",
-            "data/fence_outline2.png"
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
         ],
         "zeroLifeTexture": true
     },
@@ -36,8 +36,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/fence2.png",
-            "data/fence_outline2.png"
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
         ],
         "zeroLifeTexture": true
     },
@@ -50,8 +50,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/fence1.png",
-            "data/fence_outline1.png"
+            "data/level3/fence1.png",
+            "data/level3/fence_outline1.png"
         ],
         "zeroLifeTexture": true
     },
@@ -64,8 +64,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/fence2.png",
-            "data/fence_outline2.png"
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
         ],
         "zeroLifeTexture": true
     },
@@ -78,8 +78,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/fence2.png",
-            "data/fence_outline2.png"
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
         ],
         "zeroLifeTexture": true
     },
@@ -92,8 +92,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/fence2.png",
-            "data/fence_outline2.png"
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
         ],
         "zeroLifeTexture": true
     },
@@ -106,8 +106,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -120,8 +120,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -134,8 +134,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -148,8 +148,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -162,8 +162,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -176,8 +176,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -190,8 +190,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -204,8 +204,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -218,8 +218,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -232,8 +232,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -246,8 +246,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -260,8 +260,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -274,8 +274,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -288,8 +288,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -302,8 +302,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -316,8 +316,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -330,8 +330,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -344,8 +344,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -358,8 +358,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -372,8 +372,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -386,8 +386,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -400,8 +400,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -414,8 +414,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -428,8 +428,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -442,8 +442,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -456,8 +456,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -470,8 +470,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     },
@@ -484,8 +484,8 @@
         ],
         "state": 1,
         "texturePaths": [
-            "data/paving.png",
-            "data/paving_outline.png"
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
         ],
         "zeroLifeTexture": true
     }
