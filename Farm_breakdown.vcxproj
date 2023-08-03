@@ -161,6 +161,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\GameEntities\Platform.cpp" />
     <ClCompile Include="src\GameEntities\GameObject.cpp" />
+    <ClCompile Include="src\LevelGenerator.cpp" />
     <ClCompile Include="src\LevelManager.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\TextureManager.cpp" />
