@@ -161,6 +161,8 @@ void LevelGenerator::GenerateLevel3Bricks(SDL_Renderer* renderer, int windowWidt
 void LevelGenerator::GenerateLevel4Bricks(SDL_Renderer* renderer, int windowWidth, int windowHeight)
 {
     std::vector<Brick*> brickArray;
+    GenerateFarmFences(renderer, brickArray);
+
     int startXPosition = 59;
     int startYPosition = 62;
 
@@ -208,4 +210,97 @@ void LevelGenerator::GenerateLevel5Bricks(SDL_Renderer* renderer, int windowWidt
 
 void LevelGenerator::GenerateLevel6Bricks(SDL_Renderer* renderer, int windowWidth, int windowHeight)
 {
+    std::vector<Brick*> brickArray;
+    GenerateFarmFences(renderer, brickArray);
+
+    int startXPosition = 60;
+    int startYPosition = 50;
+
+    int currentXpos = startXPosition;
+    int currentYpos = startYPosition;
+    std::vector<std::string> brickPathes = { "data/level6/brick_life1.png", "data/level6/brick_life2.png" };
+    SDL_Rect brickParameters{ currentXpos, currentYpos, 42, 57 };
+    int marginBetweenPads = 13;
+    int marginThroughPaving = 71;
+    for (int i = 0; i < 3; i++)
+    {
+        brickParameters.y = currentYpos;
+        for (int j = 0; j < 11; j++)
+        {
+            if (j % 3 != 2)
+            {
+                brickParameters.x = currentXpos;
+                Brick* brick = new Brick(brickPathes, renderer, brickParameters, SpriteState::TWO_LIVES);
+                if (!brick)
+                {
+                    std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+                    exit(1);
+                }
+                brickArray.push_back(brick);
+                if (j % 3 == 0)
+                {
+                    currentXpos += marginBetweenPads + brickParameters.w;
+                }
+                else if (j % 3 == 1)
+                {
+                    currentXpos += marginThroughPaving + brickParameters.w;
+                }
+            }
+        }
+        currentXpos = startXPosition;
+        currentYpos += 52;
+    }
+    LevelManager::LoadBricksToJSON("gameinfo/level_data/level6bricks.json", brickArray);
+}
+
+/** @brief Generates a set of fences placed on the top of the scene
+*   Should be used before generating other bricks
+*   @return Void.
+*/
+void LevelGenerator::GenerateFarmFences(SDL_Renderer* renderer, std::vector<Brick*> &brickArray)
+{
+    //load fence bricks
+    //load 3 long fences
+    int startPosition = 3;
+    int currentXpos = startPosition;
+
+    std::vector<std::string> brickLongFenceTexturePathes = { "data/level3/fence2.png"};
+    SDL_Rect brickParamLong{ 0, 0, 110, 60 };
+    for (int i = 0; i < 3; i++)
+    {
+        brickParamLong.x = currentXpos;
+        Brick* brick = new Brick(brickLongFenceTexturePathes, renderer, brickParamLong, SpriteState::INVULNERABLE);
+        if (!brick)
+        {
+            std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+            exit(1);
+        }
+        currentXpos += brickParamLong.w;
+        brickArray.push_back(brick);
+    }
+    //load 1 short fence
+    std::vector<std::string> brickShortFenceTexturePathes = { "data/level3/fence1.png" };
+    SDL_Rect brickParamShort{ currentXpos, 0, 55, 60 };
+    Brick* brick = new Brick(brickShortFenceTexturePathes, renderer, brickParamShort, SpriteState::INVULNERABLE);
+    if (!brick)
+    {
+        std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+        exit(1);
+    }
+    currentXpos += brickParamShort.w;
+    brickArray.push_back(brick);
+
+    //load 3 long fences
+    for (int i = 0; i < 3; i++)
+    {
+        brickParamLong.x = currentXpos;
+        Brick* brick = new Brick(brickLongFenceTexturePathes, renderer, brickParamLong, SpriteState::INVULNERABLE);
+        if (!brick)
+        {
+            std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
+            exit(1);
+        }
+        currentXpos += brickParamLong.w;
+        brickArray.push_back(brick);
+    }
 }

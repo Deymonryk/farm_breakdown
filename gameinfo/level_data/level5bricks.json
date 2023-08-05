@@ -1,0 +1,338 @@
+[
+    {
+        "dstRect": [
+            60,
+            50,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            118,
+            50,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            231,
+            50,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            289,
+            50,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            402,
+            50,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            460,
+            50,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            573,
+            50,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            631,
+            50,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            60,
+            102,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            118,
+            102,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            231,
+            102,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            289,
+            102,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            402,
+            102,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            460,
+            102,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            573,
+            102,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            631,
+            102,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            60,
+            154,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            118,
+            154,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            231,
+            154,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            289,
+            154,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            402,
+            154,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            460,
+            154,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            573,
+            154,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            631,
+            154,
+            42,
+            57
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level6/brick_life2.png",
+            "data/level6/brick_life1.png"
+        ],
+        "zeroLifeTexture": false
+    }
+]

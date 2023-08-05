@@ -57,6 +57,8 @@ void Scene::LoadLevel5()
 
 void Scene::LoadLevel6()
 {
+    LoadBackground("data/level6/background.png");
+    LoadLevelFromJSON("level6");
 }
 
 void Scene::LoadBackground(std::string path)
