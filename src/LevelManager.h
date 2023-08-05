@@ -12,8 +12,6 @@ using json = nlohmann::json;
 class LevelManager
 {
 public: 
-	std::vector<Brick*> LoadBricksFromJSON(std::string filePath);
-
 	static void LoadPlatformToJSON(std::string filePath, std::unique_ptr<Platform> & platform);
 	static void LoadBallToJSON(std::string filePath, std::unique_ptr<Ball> & ball);
 	static void LoadBricksToJSON(std::string filePath, std::vector<Brick*> bricks);

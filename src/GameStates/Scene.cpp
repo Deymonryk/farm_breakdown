@@ -48,12 +48,7 @@ void Scene::LoadLevel3()
 void Scene::LoadLevel4()
 {
     LoadBackground("data/level4/background.png");
-    LoadPlatform(160, 40);
-    LoadBall(std::vector<std::string> {"data/58-Breakout-Tiles.png"}, 40);
-    std::string brickPath = "data/level4/brick.png";
-
-
-    SaveLevelToJSON("level4");
+    LoadLevelFromJSON("level4");
 }
 
 void Scene::LoadLevel5()

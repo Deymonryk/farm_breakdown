@@ -177,6 +177,7 @@
     <ClInclude Include="src\GameEntities\Ball.h" />
     <ClInclude Include="src\GameEntities\Platform.h" />
     <ClInclude Include="src\GameEntities\GameObject.h" />
+    <ClInclude Include="src\LevelGenerator.h" />
     <ClInclude Include="src\LevelManager.h" />
     <ClInclude Include="src\States.h" />
     <ClInclude Include="src\Window.h" />

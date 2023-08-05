@@ -88,7 +88,18 @@ void LevelManager::LoadBallToJSON(std::string filePath, std::unique_ptr<Ball> & 
 std::vector<Brick*> LevelManager::LoadBricksFromJSON(std::string filePath, SDL_Renderer* renderer, int& nActiveBricks)
 {
 	std::ifstream file(filePath);
-	json data = json::parse(file);
+	json data;
+	try
+	{
+		data = json::parse(file);
+	}
+	catch(json::parse_error & e)
+	{
+		// output exception information
+		std::cout << "message: " << e.what() << '\n'
+			<< "exception id: " << e.id << '\n'
+			<< "byte position of error: " << e.byte << std::endl;
+	}
 
 	std::vector<Brick*> bricks;
 	for (auto brickData : data)
@@ -121,7 +132,18 @@ std::unique_ptr<Platform> LevelManager::LoadPlatformFromJSON(std::string filePat
 {
 	std::ifstream file(filePath);
 
-	json data = json::parse(file);
+	json data;
+	try
+	{
+		data = json::parse(file);
+	}
+	catch (json::parse_error& e)
+	{
+		// output exception information
+		std::cout << "message: " << e.what() << '\n'
+			<< "exception id: " << e.id << '\n'
+			<< "byte position of error: " << e.byte << std::endl;
+	}
 
 	int x = data["dstRect"][0];
 	int y = data["dstRect"][1];
@@ -136,8 +158,18 @@ std::unique_ptr<Platform> LevelManager::LoadPlatformFromJSON(std::string filePat
 std::unique_ptr<Ball> LevelManager::LoadBallFromJSON(std::string filePath, SDL_Renderer* renderer)
 {
 	std::ifstream file(filePath);
-	json data = json::parse(file);
-
+	json data;
+	try
+	{
+		data = json::parse(file);
+	}
+	catch (json::parse_error& e)
+	{
+		// output exception information
+		std::cout << "message: " << e.what() << '\n'
+			<< "exception id: " << e.id << '\n'
+			<< "byte position of error: " << e.byte << std::endl;
+	}
 	int x = data["dstRect"][0];
 	int y = data["dstRect"][1];
 	int w = data["dstRect"][2];
