@@ -206,6 +206,104 @@ void LevelGenerator::GenerateLevel4Bricks(SDL_Renderer* renderer, int windowWidt
 
 void LevelGenerator::GenerateLevel5Bricks(SDL_Renderer* renderer, int windowWidth, int windowHeight)
 {
+    std::vector<Brick*> brickArray;
+    int currentX = 0;
+    int constructionHeight = 27;
+    std::vector<std::string> construction1Pathes = { "data/level5/construction1_fixed.png", "data/level5/construction1_destroyed.png" };
+    SDL_Rect construction1Parameters = { currentX, constructionHeight, 147, 199};
+    Brick* construction1 = new Brick(construction1Pathes, renderer, construction1Parameters, SpriteState::ONE_LIFE, true);
+    brickArray.push_back(construction1);
+    currentX += construction1Parameters.w;
+
+    std::vector<std::string> construction2Pathes = { "data/level5/construction2_fixed.png", "data/level5/construction2_destroyed.png" };
+    SDL_Rect construction2Parameters = { currentX, constructionHeight, 141, 199 };
+    Brick* construction2 = new Brick(construction2Pathes, renderer, construction2Parameters, SpriteState::ONE_LIFE, true);
+    brickArray.push_back(construction2);
+    currentX += construction2Parameters.w;
+
+    std::vector<std::string> construction3Pathes = { "data/level5/construction3_fixed.png", "data/level5/construction3_destroyed.png" };
+    SDL_Rect construction3Parameters = { currentX, constructionHeight, 142, 200 };
+    Brick* construction3 = new Brick(construction3Pathes, renderer, construction3Parameters, SpriteState::ONE_LIFE, true);
+    brickArray.push_back(construction3);
+    currentX += construction3Parameters.w;
+
+    std::vector<std::string> construction4Pathes = { "data/level5/construction4_fixed.png", "data/level5/construction4_destroyed.png" };
+    SDL_Rect construction4Parameters = { currentX, constructionHeight, 141, 199 };
+    Brick* construction4 = new Brick(construction4Pathes, renderer, construction4Parameters, SpriteState::ONE_LIFE, true);
+    brickArray.push_back(construction4);
+    currentX += construction4Parameters.w;
+
+    std::vector<std::string> construction5Pathes = { "data/level5/construction5_fixed.png", "data/level5/construction5_destroyed.png" };
+    SDL_Rect construction5Parameters = { currentX, constructionHeight, 149, 199 };
+    Brick* construction5 = new Brick(construction5Pathes, renderer, construction5Parameters, SpriteState::ONE_LIFE, true);
+    brickArray.push_back(construction5);
+
+    std::vector<std::string> ropePathes = { "data/level5/rope.png"};
+    SDL_Rect rope1Parameters = { 6, 240, 45, 29 };
+    Brick* rope1 = new Brick(ropePathes, renderer, rope1Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(rope1);
+    SDL_Rect rope2Parameters = { 54, 233, 45, 29 };
+    Brick* rope2 = new Brick(ropePathes, renderer, rope2Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(rope2);
+
+    std::vector<std::string> sackPathes = { "data/level5/sack.png" };
+    SDL_Rect sackParameters = { 97, 189, 56, 63 };
+    Brick* sack = new Brick(sackPathes, renderer, sackParameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(sack);
+
+    std::vector<std::string> lad1Pathes = { "data/level5/lad1.png" };
+    SDL_Rect lad1Parameters = { 223, 199, 56, 60 };
+    Brick* lad1 = new Brick(lad1Pathes, renderer, lad1Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(lad1);
+
+    std::vector<std::string> lad3Pathes = { "data/level5/lad3.png" };
+    SDL_Rect lad3Parameters = { 646, 211, 66, 84 };
+    Brick* lad3 = new Brick(lad3Pathes, renderer, lad3Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(lad3);
+
+    std::vector<std::string> lad2Pathes = { "data/level5/lad2.png" };
+    SDL_Rect lad2Parameters = { 619, 238, 61, 65 };
+    Brick* lad2 = new Brick(lad2Pathes, renderer, lad2Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(lad2);
+
+    std::vector<std::string> girden2Pathes = { "data/level5/girden2.png" };
+    SDL_Rect girden2Parameters = { 345, 215, 132, 35 };
+    Brick* girden2 = new Brick(girden2Pathes, renderer, girden2Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(girden2);
+
+    std::vector<std::string> girden3Pathes = { "data/level5/girden3.png" };
+    SDL_Rect girden3Parameters = { 359, 227, 95, 32 };
+    Brick* girden3 = new Brick(girden3Pathes, renderer, girden3Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(girden3);
+        
+    std::vector<std::string> girden1Pathes = { "data/level5/girden1.png" };
+    SDL_Rect girden1Parameters = { 368, 250, 77, 21 };
+    Brick* girden1 = new Brick(girden1Pathes, renderer, girden1Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(girden1);
+    
+    std::vector<std::string> barelPathes = { "data/level5/barel.png" };
+    SDL_Rect barelParameters = { 301, 189, 49, 70 };
+    Brick* barel = new Brick(barelPathes, renderer, barelParameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(barel);
+
+    std::vector<std::string> planksPathes{"data/level5/planks.png"};
+    SDL_Rect planks1Parameters = { 521, 235, 51, 28};
+    Brick* planks1 = new Brick(planksPathes, renderer, planks1Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(planks1);
+
+    SDL_Rect planks2Parameters = { 570, 237, 51, 28 };
+    Brick* planks2 = new Brick(planksPathes, renderer, planks2Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(planks2);
+
+    SDL_Rect planks3Parameters = { 507, 251, 51, 28 };
+    Brick* planks3 = new Brick(planksPathes, renderer, planks3Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(planks3);
+
+    SDL_Rect planks4Parameters = { 550, 255, 51, 28 };
+    Brick* planks4 = new Brick(planksPathes, renderer, planks4Parameters, SpriteState::ONE_LIFE);
+    brickArray.push_back(planks4);
+
+    LevelManager::LoadBricksToJSON("gameinfo/level_data/level5bricks.json", brickArray);
 }
 
 void LevelGenerator::GenerateLevel6Bricks(SDL_Renderer* renderer, int windowWidth, int windowHeight)

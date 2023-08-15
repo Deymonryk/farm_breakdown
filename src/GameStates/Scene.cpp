@@ -53,6 +53,9 @@ void Scene::LoadLevel4()
 
 void Scene::LoadLevel5()
 {
+    LoadBackground("data/level5/background.png");
+    LevelGenerator::GenerateLevel5Bricks(renderer_, windowWidth_, windowHeight_);
+    LoadLevelFromJSON("level5");
 }
 
 void Scene::LoadLevel6()
