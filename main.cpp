@@ -9,8 +9,8 @@ int main(int argc, char* argv[])
 
     Uint32 frameStart;
     int frameTime;
-
-    Window *window = new Window(720, 480, false);
+ 
+    Window *window = new Window(720, 480, false, "Contry Breakdown");
 
     while (window->running())
     {

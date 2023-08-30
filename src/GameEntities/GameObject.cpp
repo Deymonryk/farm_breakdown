@@ -9,7 +9,7 @@ GameObject::GameObject(std::vector <std::string> texturePathes, SDL_Renderer* re
 		textures_.push_back(TextureManager::loadTexture(path, renderer_));
 	}
 	SDL_QueryTexture(textures_.at(0), NULL, NULL, &srcRect_.w, &srcRect_.h);
-	currentTexture = 0;
+	currentTexture_ = 0;
 
 	setSpeed(0, 0);
 }
@@ -22,21 +22,23 @@ GameObject::~GameObject()
 
 void GameObject::Draw()
 {
-	SDL_RenderCopy(renderer_, textures_.at(currentTexture), &srcRect_, &dstRect_);
+	SDL_RenderCopy(renderer_, textures_.at(currentTexture_), &srcRect_, &dstRect_);
 }
 
 void GameObject::Update()
 {
 	if(textures_.size() > 1)
 	{
-		int r = rand() % 3;
-		if (r % textures_.size() == 0)
+		frameCount_++;
+		//change the number after % to change number of frame where texture changes
+		if (frameCount_ % 3 == 0)
 		{
-			currentTexture++;
-			if (currentTexture >= textures_.size())
+			currentTexture_++;
+			if (currentTexture_ >= textures_.size())
 			{
-				currentTexture = 0;
+				currentTexture_ = 0;
 			}
+			frameCount_ = 0;
 		}
 	}
 }

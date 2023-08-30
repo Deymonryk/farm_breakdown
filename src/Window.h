@@ -36,7 +36,7 @@ private:
 	void loadLevelSelectMenu();
 
 public:
-	Window(int width, int height, bool isFullscreen);
+	Window(int width, int height, bool isFullscreen, std::string windowName);
 	~Window();
 	void Quit();
 

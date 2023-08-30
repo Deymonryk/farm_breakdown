@@ -19,8 +19,14 @@ Ball::Ball(std::vector<std::string> texturePathes, SDL_Renderer* renderer, SDL_R
 
 void Ball::Update()
 {
+	//move ball
 	dstRect_.x += xSpeed_;
 	dstRect_.y += ySpeed_;
+
+	//Rotate ball by 15 degrees every frame and render the rotated texture
+	currentAngle_ += 15;
+	SDL_RenderCopyEx(renderer_, textures_.at(currentTexture_), nullptr, &dstRect_, currentAngle_, nullptr, SDL_FLIP_NONE);
+	SDL_RenderPresent(renderer_);
 }
 
 void Ball::borderCollision(int maxWidth)
@@ -41,7 +47,7 @@ void Ball::platformCollision(Platform& platform)
 	int platW, platH;
 	platform.getPosition(platX, platY);
 	platform.getSize(platW, platH);
-	if (platY < dstRect_.y + dstRect_.h)
+	if (platY < dstRect_.y + dstRect_.h && ySpeed_ > 0)
 	{
 		if (platX < dstRect_.x + dstRect_.w && platX + platW > dstRect_.x)
 		{

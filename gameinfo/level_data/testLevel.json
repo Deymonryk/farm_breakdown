@@ -1,0 +1,15 @@
+[
+  {
+    "dstRect": [
+      428,
+      27,
+      138,
+      60
+    ],
+    "state": 2,
+    "texturePaths": [
+      "data/level2/box_open.png",
+      "data/level2/box_lid.png"
+    ]
+  }
+]

@@ -14,7 +14,8 @@ class GameObject
 protected:	
 	std::vector <std::string> texturePathes_;
 	std::vector <SDL_Texture*> textures_;
-	int currentTexture;
+	int currentTexture_;
+	int frameCount_ = 0;
 	SDL_Renderer* renderer_;
 
 	//srcRect - position and size of texture in image file

@@ -22,7 +22,7 @@ void Message::handleInput(SDL_Event& e, GameState& gameState)
 		{
 			if (it->first == "restart")
 			{
-				gameState = GameState::NEW_GAME;
+				gameState = GameState::RELOAD_LEVEL;
 			}
 			else if (it->first == "menu")
 			{
@@ -32,6 +32,36 @@ void Message::handleInput(SDL_Event& e, GameState& gameState)
 			{
 				gameState = GameState::SCENE;
 			}
+			else if (it->first == "nextLevel")
+			{
+				gameState = GameState::NEXT_LEVEL;
+			}
+		}
+	}
+}
+
+void Message::handleInput(SDL_Event& e, GameState& gameState, GameLevels& currentLevel)
+{
+	int mouseX, mouseY;
+	SDL_GetMouseState(&mouseX, &mouseY);
+	for (auto it = buttons_.begin(); it != buttons_.end(); ++it)
+	{
+		it->second->isHovered(mouseX, mouseY);
+		if (it->second->getHovered() && e.type == SDL_MOUSEBUTTONDOWN)
+		{
+			if (it->first == "restart")
+			{
+				gameState = GameState::RELOAD_LEVEL;
+			}
+			else if (it->first == "menu")
+			{
+				gameState = GameState::MAIN_MENU;
+			}
+			else if (it->first == "resume")
+			{
+				gameState = GameState::SCENE;
+			}
+			
 		}
 	}
 }
@@ -43,4 +73,17 @@ void Message::draw()
 	{
 		it->second->draw(renderer_);
 	}
+}
+
+bool Message::isButtonPressed(std::string buttonName, int x, int y)
+{
+	for (auto it = buttons_.begin(); it != buttons_.end(); ++it)
+	{
+		if (it->first == buttonName && it->second->getHovered())
+		{
+			return true;
+		}
+	}
+	
+	return false;
 }

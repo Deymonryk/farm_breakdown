@@ -4,7 +4,7 @@
         400,
         40
     ],
-    "texturePaths": [
-        "data/58-Breakout-Tiles.png"
-    ]
+  "texturePaths": [
+    "data/level2/ball.png"
+  ]
 }

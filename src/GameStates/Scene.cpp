@@ -54,7 +54,6 @@ void Scene::LoadLevel4()
 void Scene::LoadLevel5()
 {
     LoadBackground("data/level5/background.png");
-    LevelGenerator::GenerateLevel5Bricks(renderer_, windowWidth_, windowHeight_);
     LoadLevelFromJSON("level5");
 }
 
@@ -169,6 +168,7 @@ void Scene::LoadLevelFromJSON(std::string levelName)
     std::string ballFilePath = savesLocation + levelName + "ball.json";
     ball_ = LevelManager::LoadBallFromJSON(ballFilePath, renderer_);
 
+    //can be changed from "savesLocation + levelName + "bricks.json"" to "savesLocation + "testLevel.json"" for testing
     std::string bricksFilePath = savesLocation + levelName + "bricks.json";
     brickArray_ = LevelManager::LoadBricksFromJSON(bricksFilePath, renderer_, nActiveBricks_);
 }
@@ -311,15 +311,16 @@ void Scene::loadGame(int mouseX, int mouseY)
         int deltaY = mouseY - ballY;
         
         //normalization
+        //increase multiplier to increase speed (10 is too big to pass levels, 5 is too slow, 7 is ok)
         if (abs(deltaX) > abs(deltaY))
         {
-            deltaY = -round(10 * deltaY / deltaX);
-            deltaX = 10 * (deltaX / abs(deltaX));
+            deltaY = -round(7 * deltaY / deltaX);
+            deltaX = 7 * (deltaX / abs(deltaX));
         }
         else
         {
-            deltaX = -round(10 * deltaX / deltaY);
-            deltaY = 10 * (deltaY / abs(deltaY));
+            deltaX = -round(7 * deltaX / deltaY);
+            deltaY = 7 * (deltaY / abs(deltaY));
         }
         ball_->setSpeed(deltaX, deltaY);
     }

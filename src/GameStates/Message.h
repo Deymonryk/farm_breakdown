@@ -11,6 +11,9 @@ public:
 	Message(SDL_Renderer* renderer, std::string path, std::map<std::string, Button*> buttons, SDL_Rect messageParameters);
 	void update() override;
 	void handleInput(SDL_Event& e, GameState& gameState) override;
+	void handleInput(SDL_Event& e, GameState& gameState, GameLevels& currentLevelState);
 	void draw() override;
+
+	bool isButtonPressed(std::string buttonName, int x, int y);
 };
 

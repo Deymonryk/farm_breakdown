@@ -8,6 +8,7 @@ class Ball :  public GameObject
 private:
 	void reflectX();
 	void reflectY();
+	int currentAngle_ = 0;
 public:
 	Ball(std::vector<std::string> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters);
 	void Update() override;
