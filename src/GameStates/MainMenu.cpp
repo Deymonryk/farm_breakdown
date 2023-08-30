@@ -2,10 +2,13 @@
 
 MainMenu::MainMenu(SDL_Renderer* renderer, int windowWidth, int windowHeight) : WindowState(renderer)
 {
-	backGround_ = TextureManager::loadTexture("data/27-Breakout-Tiles.png", renderer_);
-	Button *play = new Button("data/playButtonActive.png", "data/playButtonInactive.png", renderer, 
+	srand(time(NULL));
+	int backroundNumber = rand() % 3 + 1;
+	std::string backgroundPath = "data/interface/menuBackground" + std::to_string(backroundNumber) + ".png";
+	backGround_ = TextureManager::loadTexture(backgroundPath, renderer_);
+	Button *play = new Button("data/interface/playButtonActive.png", "data/interface/playButtonInactive.png", renderer, 
 		SDL_Rect{windowWidth / 2 - 50,windowHeight / 2 - 20, 100, 39 });
-	menuButtons_.insert(std::pair<const char*, Button*>("play", play));
+	menuButtons_.insert(std::pair<std::string, Button*>("play", play));
 }
 
 MainMenu::~MainMenu()

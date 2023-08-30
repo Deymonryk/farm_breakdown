@@ -2,38 +2,76 @@
 
 void Scene::LoadGameEntities(GameLevels loadedLevel)
 {
-    if(loadedLevel== GameLevels::Level1)
+    switch (loadedLevel)
     {
-        LoadBackground("data/background.png");
-        std::vector<const char*> platformTexturePathes = { "data/50-Breakout-Tiles.png" };
-        LoadPlatform(platformTexturePathes, 160, 40);
-        //ball start position based on platform position -> should be loaded after platform
-        std::vector<const char*> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
-        LoadBall(ballTexturePathes, 40);
-        std::vector<const char*> brickTexturePathes = { "data/01-Breakout-Tiles.png" };
-        LoadBricks(brickTexturePathes, 5, 3, SpriteState::ONE_LIFE);
+    case GameLevels::Level1:
+        LoadLevel1();
+        break;
+    case GameLevels::Level2:
+        LoadLevel2();
+        break;
+    case GameLevels::Level3:
+        LoadLevel3();
+        break;
+    case GameLevels::Level4:
+        LoadLevel4();
+        break;
+    case GameLevels::Level5:
+        LoadLevel5();
+        break;
+    case GameLevels::Level6:
+        LoadLevel6();
+        break;
+    default:
+        break;
     }
-    else if(loadedLevel== GameLevels::Level2)
-    {
-        LoadBackground("data/background.png");
-        std::vector<const char*> platformTexturePathes = { "data/50-Breakout-Tiles.png" };
-        LoadPlatform(platformTexturePathes, 160, 40);
-        //ball start position based on platform position -> should be loaded after platform
-        std::vector<const char*> ballTexturePathes = { "data/58-Breakout-Tiles.png" };
-        LoadBall(ballTexturePathes, 40);
-        std::vector<const char*> brickTexturePathes = { "data/box_open.png", "data/box_lid.png"};
-        LoadBricks(brickTexturePathes, 5, 3, SpriteState::TWO_LIVES);
-    }   
 }
 
-void Scene::LoadBackground(const char* path)
+void Scene::LoadLevel1()
+{
+    LoadBackground("data/level1/background.png");  
+    LoadLevelFromJSON("level1");
+}
+
+void Scene::LoadLevel2()
+{
+    LoadBackground("data/level2/background.png");
+    LoadLevelFromJSON("level2");
+}
+
+void Scene::LoadLevel3()
+{
+    LoadBackground("data/level3/planting_background.png");
+    LoadLevelFromJSON("level3");
+}
+
+void Scene::LoadLevel4()
+{
+    LoadBackground("data/level4/background.png");
+    LoadLevelFromJSON("level4");
+}
+
+void Scene::LoadLevel5()
+{
+    LoadBackground("data/level5/background.png");
+    LoadLevelFromJSON("level5");
+}
+
+void Scene::LoadLevel6()
+{
+    LoadBackground("data/level6/background.png");
+    LoadLevelFromJSON("level6");
+}
+
+void Scene::LoadBackground(std::string path)
 {
     //loading background
     sceneBackground_ = TextureManager::loadTexture(path, renderer_);
 }
 
-void Scene::LoadPlatform(std::vector<const char*>path, int platformWidth, int platformHeight)
+void Scene::LoadPlatform(int platformWidth, int platformHeight)
 {
+    std::vector<std::string> platformTexturePathes = { "data/50-Breakout-Tiles.png", "data/51-Breakout-Tiles.png", "data/52-Breakout-Tiles.png" };
     //loading player
     if (platformWidth > 0 && platformHeight > 0)
     {
@@ -42,7 +80,7 @@ void Scene::LoadPlatform(std::vector<const char*>path, int platformWidth, int pl
         platParam.y = windowHeight_ - platformHeight;
         platParam.w = platformWidth;
         platParam.h = platformHeight;
-        platform_ = new Platform(path, renderer_, platParam, windowWidth_/36);
+        platform_ = std::make_unique <Platform>(platformTexturePathes, renderer_, platParam, windowWidth_/36);
     }
     else
     {
@@ -51,7 +89,7 @@ void Scene::LoadPlatform(std::vector<const char*>path, int platformWidth, int pl
     }
 }
 
-void Scene::LoadBall(std::vector<const char*> path, int ballDiameter)
+void Scene::LoadBall(std::vector<std::string> path, int ballDiameter)
 {
     if (ballDiameter > 0)
     {
@@ -65,42 +103,13 @@ void Scene::LoadBall(std::vector<const char*> path, int ballDiameter)
         ballParam.y = platformY - ballDiameter;
         ballParam.w = ballParam.h = ballDiameter;
 
-        ball_ = new Ball(path, renderer_, ballParam);
+        ball_ = std::make_unique<Ball>(path, renderer_, ballParam);
     }
     else
     {
         std::cout << "Ball initialization Error: " << SDL_GetError() << "\n";
         exit(1);
     }
-
-}
-
-void Scene::LoadBricks(std::vector<const char*> pathes, int verticalNumber, int horizontalNumber, SpriteState spriteScene)
-{
-    SDL_Rect brickParam;
-    brickParam.w = windowWidth_ / verticalNumber;;
-    brickParam.h = (windowHeight_ * 0.4) / horizontalNumber;
-
-    int verticalStartPoint = (windowWidth_ - brickParam.w * verticalNumber) / 2;
-    for (int j = 0; j < horizontalNumber; j++)
-    {
-        std::vector<Brick*> temp;
-        for (int i = 0; i < verticalNumber; i++)
-        {
-            brickParam.x = verticalStartPoint + i * brickParam.w;
-            brickParam.y = j * brickParam.h + 1;
-            
-            Brick* brick = new Brick(pathes, renderer_, brickParam, spriteScene);
-            if (!brick)
-            {
-                std::cout << "Brick initialization Error: " << SDL_GetError() << "\n";
-                exit(1);
-            }
-            temp.push_back(brick);
-        }
-        brickArray_.push_back(temp);
-    }
-    nActiveBricks_ = verticalNumber * horizontalNumber;
 }
 
 void Scene::CheckBorderCollision()
@@ -120,22 +129,48 @@ void Scene::CheckPlatformCollision()
 
 void Scene::CheckBrickCollision()
 {
-    for (auto raw : brickArray_)
+    for (auto brick : brickArray_)
     {
-        for (auto brick : raw)
+        if (brick->getActivity())
         {
-            if (brick->getActivity())
+            bool startBrickActivity = brick->getActivity();
+            ball_->brickCollision(*brick);
+            bool finishBrickActivity = brick->getActivity();
+            if (startBrickActivity != finishBrickActivity)
             {
-                bool startBrickActivity = brick->getActivity();
-                ball_->brickCollision(*brick);
-                bool finishBrickActivity = brick->getActivity();
-                if (startBrickActivity != finishBrickActivity)
-                {
-                    nActiveBricks_--;
-                }
+                nActiveBricks_--;
             }
         }
     }
+}
+
+void Scene::SaveLevelToJSON(std::string levelName)
+{
+    std::string savesLocation = "gameinfo/level_data/";
+
+    std::string platformFilePath = savesLocation + levelName + "platform.json";
+    LevelManager::LoadPlatformToJSON(platformFilePath, platform_);
+
+    std::string ballFilePath = savesLocation + levelName + "ball.json";
+    LevelManager::LoadBallToJSON(ballFilePath, ball_);
+
+    std::string bricksFilePath = savesLocation + levelName + "bricks.json";
+    LevelManager::LoadBricksToJSON(bricksFilePath, brickArray_);
+}
+
+void Scene::LoadLevelFromJSON(std::string levelName)
+{
+    std::string savesLocation = "gameinfo/level_data/";
+
+    std::string platformFilePath = savesLocation + levelName + "platform.json";
+    platform_ = LevelManager::LoadPlatformFromJSON(platformFilePath, renderer_);
+
+    std::string ballFilePath = savesLocation + levelName + "ball.json";
+    ball_ = LevelManager::LoadBallFromJSON(ballFilePath, renderer_);
+
+    //can be changed from "savesLocation + levelName + "bricks.json"" to "savesLocation + "testLevel.json"" for testing
+    std::string bricksFilePath = savesLocation + levelName + "bricks.json";
+    brickArray_ = LevelManager::LoadBricksFromJSON(bricksFilePath, renderer_, nActiveBricks_);
 }
 
 Scene::Scene(SDL_Renderer* renderer, int wWidth, int wHeight, GameLevels selectedLevel)
@@ -164,6 +199,8 @@ void Scene::update()
         CheckBorderCollision();
         CheckPlatformCollision();
         CheckBrickCollision();
+
+        platform_->Update();
     }
 }
 
@@ -172,13 +209,10 @@ void Scene::draw()
     SDL_RenderCopy(renderer_, sceneBackground_, NULL, NULL);
     for (int i = 0; i < brickArray_.size(); i++)
     {
-        for (int j = 0; j < brickArray_[i].size(); j++)
-        {
-            brickArray_[i][j]->Draw();
-        }
+        brickArray_[i]->Draw();
     }
-    platform_->Draw();
     ball_->Draw();
+    platform_->Draw();
 }
 
 void Scene::handleInput(SDL_Event& e, GameState& gameState)
@@ -277,15 +311,16 @@ void Scene::loadGame(int mouseX, int mouseY)
         int deltaY = mouseY - ballY;
         
         //normalization
+        //increase multiplier to increase speed (10 is too big to pass levels, 5 is too slow, 7 is ok)
         if (abs(deltaX) > abs(deltaY))
         {
-            deltaY = -round(10 * deltaY / deltaX);
-            deltaX = 10 * (deltaX / abs(deltaX));
+            deltaY = -round(7 * deltaY / deltaX);
+            deltaX = 7 * (deltaX / abs(deltaX));
         }
         else
         {
-            deltaX = -round(10 * deltaX / deltaY);
-            deltaY = 10 * (deltaY / abs(deltaY));
+            deltaX = -round(7 * deltaX / deltaY);
+            deltaY = 7 * (deltaY / abs(deltaY));
         }
         ball_->setSpeed(deltaX, deltaY);
     }

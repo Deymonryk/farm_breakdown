@@ -4,13 +4,18 @@
 class Brick : public GameObject
 {
 private:
-	//bool isActive_;
-	SpriteState spriteState;
+	SpriteState spriteState_;
+	bool isZeroLiveTexture_;
 public:
-	Brick(std::vector <const char*> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters, SpriteState state);
-	bool getActivity();
+	Brick(std::vector <std::string> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters, SpriteState state);
+	Brick(std::vector <std::string> texturePathes, SDL_Renderer* renderer, SDL_Rect objParameters, SpriteState state, bool isZeroLiveTexture);
+
 	void reduceLives();
 	void Draw() override;
-	//void setActivity(bool activity) { isActive_ = activity; };
+	void Update() override;
+
+	bool getActivity();
+	SpriteState getSpriteState() { return spriteState_; }
+	bool isZeroLifeTexture() { return isZeroLiveTexture_; }
 };
 

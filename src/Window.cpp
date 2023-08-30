@@ -73,18 +73,18 @@ void Window::loadGameoverMessage()
     int buttonsY = msgRect.y + msgRect.h / 2 + verticalMargin;
 
     int restartX = msgRect.x + msgRect.w / 2 + horizontalMargin / 2;
-    Button* restart = new Button("data/restartButtonActive.png", "data/restartButtonInactive.png", renderer_, 
+    Button* restart = new Button("data/interface/restartButtonActive.png", "data/interface/restartButtonInactive.png", renderer_, 
         SDL_Rect{ restartX, buttonsY, 50, 50 });
 
     int exitX = msgRect.x + msgRect.w / 2 - horizontalMargin / 2 - 50;
-    Button* exit = new Button("data/exitButtonActive.png", "data/exitButtonInactive.png", renderer_, 
+    Button* exit = new Button("data/interface/exitButtonActive.png", "data/interface/exitButtonInactive.png", renderer_, 
         SDL_Rect{ exitX, buttonsY, 50, 50 });
 
-    std::map<const char*, Button*> gameverMessageButtons{
+    std::map<std::string, Button*> gameverMessageButtons{
         {"restart", restart},
         {"menu", exit}
     };
-    gameoverMessage_ = new Message(renderer_, "data/24-Breakout-Tiles.png", gameverMessageButtons, msgRect);
+    gameoverMessage_ = new Message(renderer_, "data/interface/GameOverMessage.png", gameverMessageButtons, msgRect);
 }
 
 void Window::loadVictoryMessage()
@@ -98,19 +98,19 @@ void Window::loadVictoryMessage()
     int horizontalMargin = 40, verticalMargin = 15;
     int buttonsY = msgRect.y + msgRect.h / 2 + verticalMargin;
 
-    int restartX = msgRect.x + msgRect.w / 2 + horizontalMargin / 2;
-    Button* restart = new Button("data/restartButtonActive.png", "data/restartButtonInactive.png", renderer_,
-        SDL_Rect{ restartX, buttonsY, 50, 50 });
+    int victoryX = msgRect.x + msgRect.w / 2 + horizontalMargin / 2;
+    Button* nextLevel = new Button("data/interface/nextButtonActive.png", "data/interface/nextButtonInactive.png", renderer_,
+        SDL_Rect{ victoryX, buttonsY, 50, 50 });
 
     int exitX = msgRect.x + msgRect.w / 2 - horizontalMargin / 2 - 50;
-    Button* exit = new Button("data/exitButtonActive.png", "data/exitButtonInactive.png", renderer_,
+    Button* exit = new Button("data/interface/exitButtonActive.png", "data/interface/exitButtonInactive.png", renderer_,
         SDL_Rect{ exitX, buttonsY, 50, 50 });
 
-    std::map<const char*, Button*> gameverMessageButtons{
-        {"restart", restart},
+    std::map<std::string, Button*> victoryMessageButtons{
+        {"nextLevel", nextLevel},
         {"menu", exit}
     };
-    victoryMessage_ = new Message(renderer_, "data/22-Breakout-Tiles.png", gameverMessageButtons, msgRect);
+    victoryMessage_ = new Message(renderer_, "data/interface/GameVictoryMessage.png", victoryMessageButtons, msgRect);
 }
 
 void Window::loadLevelSelectMenu()
@@ -122,25 +122,25 @@ void Window::loadLevelSelectMenu()
     menuRect.y = height_ / 2 - menuRect.h / 2;
 
     int horizontalMargin = 60, veticalMargin = 30;
-    Button* butLvl1 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+    Button* butLvl1 = new Button("data/interface/levelSelectButtonsActive.png", "data/interface/levelSelectButtonsInactive.png", renderer_,
         SDL_Rect{ menuRect.x + horizontalMargin / 2, menuRect.y + veticalMargin * 2 , 60, 60 },
         SDL_Rect{ 0, 0, 139, 139 });
-    Button* butLvl2 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+    Button* butLvl2 = new Button("data/interface/levelSelectButtonsActive.png", "data/interface/levelSelectButtonsInactive.png", renderer_,
         SDL_Rect{ menuRect.x + horizontalMargin /2 + 60 + horizontalMargin, menuRect.y + veticalMargin * 2 , 60, 60 },
         SDL_Rect{ 140, 0, 139, 139});    
-    Button* butLvl3 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+    Button* butLvl3 = new Button("data/interface/levelSelectButtonsActive.png", "data/interface/levelSelectButtonsInactive.png", renderer_,
         SDL_Rect{ menuRect.x + horizontalMargin / 2 + (60 + horizontalMargin) * 2, menuRect.y + veticalMargin * 2, 60, 60 },
         SDL_Rect{ 280, 0, 139, 139});    
-    Button* butLvl4 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+    Button* butLvl4 = new Button("data/interface/levelSelectButtonsActive.png", "data/interface/levelSelectButtonsInactive.png", renderer_,
         SDL_Rect{ menuRect.x + horizontalMargin / 2, menuRect.y + veticalMargin * 5 / 3 + 60 + veticalMargin, 60, 60 },
         SDL_Rect{ 0, 140, 139, 139});    
-    Button* butLvl5 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+    Button* butLvl5 = new Button("data/interface/levelSelectButtonsActive.png", "data/interface/levelSelectButtonsInactive.png", renderer_,
         SDL_Rect{ menuRect.x + horizontalMargin / 2 + 60 + horizontalMargin, menuRect.y + veticalMargin * 5 / 3 + 60 + veticalMargin, 60, 60 },
         SDL_Rect{ 140, 140, 139, 139});    
-    Button* butLvl6 = new Button("data/levelSelectButtonsActive.png", "data/levelSelectButtonsInactive.png", renderer_,
+    Button* butLvl6 = new Button("data/interface/levelSelectButtonsActive.png", "data/interface/levelSelectButtonsInactive.png", renderer_,
         SDL_Rect{ menuRect.x + horizontalMargin / 2 + (60 + horizontalMargin) * 2, menuRect.y + veticalMargin * 5 / 3 + 60 + veticalMargin, 60, 60 },
         SDL_Rect{ 280, 140, 139, 139 });
-    std::map<const char*, Button*> lvlSelectMenuButtons{
+    std::map<std::string, Button*> lvlSelectMenuButtons{
        {"Level1", butLvl1},
        {"Level2", butLvl2},
        {"Level3", butLvl3},
@@ -149,16 +149,17 @@ void Window::loadLevelSelectMenu()
        {"Level6", butLvl6},
     };
 
-    levelSelectMenu_ = new LevelSelectMenu(renderer_, "data/levelSelectMenuBackground.png", lvlSelectMenuButtons, menuRect);
+    levelSelectMenu_ = new LevelSelectMenu(renderer_, "data/interface/levelSelectMenuBackground.png", lvlSelectMenuButtons, menuRect);
 }
 
    
 
-Window::Window(int width, int height, bool isFullscreen) :
+Window::Window(int width, int height, bool isFullscreen, std::string windowName) :
     width_(width),
     height_(height)
 {
     CreateWindow(isFullscreen);
+    SDL_SetWindowTitle(window_, windowName.c_str());
     CreateRenderer();
 
     loadMenu();
@@ -258,9 +259,22 @@ void Window::UpdateWindow()
         victoryMessage_->update();
         break;
 
-    case GameState::NEW_GAME:
+    case GameState::RELOAD_LEVEL:
         loadScene();
         gameState_ = GameState::SCENE;
+        break;
+
+    case GameState::NEXT_LEVEL:
+        if (selectedLevel_ != GameLevels::Level6)
+        {
+            selectedLevel_ = static_cast<GameLevels>(static_cast<int> (selectedLevel_) + 1);
+            loadScene();
+            gameState_ = GameState::SCENE;
+        }
+        else
+        {
+            gameState_ = GameState::MAIN_MENU;
+        }
         break;
 
     default:

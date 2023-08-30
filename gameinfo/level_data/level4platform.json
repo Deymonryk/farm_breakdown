@@ -1,0 +1,13 @@
+{
+    "dstRect": [
+        280,
+        440,
+        160,
+        40
+    ],
+    "texturePaths": [
+        "data/50-Breakout-Tiles.png",
+        "data/51-Breakout-Tiles.png",
+        "data/52-Breakout-Tiles.png"
+    ]
+}

@@ -161,6 +161,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\GameEntities\Platform.cpp" />
     <ClCompile Include="src\GameEntities\GameObject.cpp" />
+    <ClCompile Include="src\LevelGenerator.cpp" />
+    <ClCompile Include="src\LevelManager.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\TextureManager.cpp" />
     <ClCompile Include="src\GameStates\WindowState.cpp" />
@@ -175,6 +177,8 @@
     <ClInclude Include="src\GameEntities\Ball.h" />
     <ClInclude Include="src\GameEntities\Platform.h" />
     <ClInclude Include="src\GameEntities\GameObject.h" />
+    <ClInclude Include="src\LevelGenerator.h" />
+    <ClInclude Include="src\LevelManager.h" />
     <ClInclude Include="src\States.h" />
     <ClInclude Include="src\Window.h" />
     <ClInclude Include="src\TextureManager.h" />

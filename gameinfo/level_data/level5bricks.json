@@ -1,0 +1,254 @@
+[
+    {
+        "dstRect": [
+            0,
+            27,
+            147,
+            199
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/construction1_fixed.png",
+            "data/level5/construction1_destroyed.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            147,
+            27,
+            141,
+            199
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/construction2_fixed.png",
+            "data/level5/construction2_destroyed.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            288,
+            27,
+            142,
+            200
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/construction3_fixed.png",
+            "data/level5/construction3_destroyed.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            430,
+            27,
+            141,
+            199
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/construction4_fixed.png",
+            "data/level5/construction4_destroyed.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            571,
+            27,
+            149,
+            199
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/construction5_fixed.png",
+            "data/level5/construction5_destroyed.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            6,
+            240,
+            45,
+            29
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/rope.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            54,
+            233,
+            45,
+            29
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/rope.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            97,
+            189,
+            56,
+            63
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/sack.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            223,
+            199,
+            56,
+            60
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/lad1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            646,
+            211,
+            66,
+            84
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/lad3.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            619,
+            238,
+            61,
+            65
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/lad2.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            345,
+            215,
+            132,
+            35
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/girden2.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            359,
+            227,
+            95,
+            32
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/girden3.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            368,
+            250,
+            77,
+            21
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/girden1.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            301,
+            189,
+            49,
+            70
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/barel.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            521,
+            235,
+            51,
+            28
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/planks.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            570,
+            237,
+            51,
+            28
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/planks.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            507,
+            251,
+            51,
+            28
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/planks.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            550,
+            255,
+            51,
+            28
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level5/planks.png"
+        ],
+        "zeroLifeTexture": false
+    }
+]

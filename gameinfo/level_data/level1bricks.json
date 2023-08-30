@@ -1,0 +1,197 @@
+[
+    {
+        "dstRect": [
+            30,
+            0,
+            120,
+            114
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf1_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            210,
+            0,
+            120,
+            114
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf2_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            390,
+            0,
+            120,
+            114
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf3_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            570,
+            0,
+            120,
+            114
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf4_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            0,
+            55,
+            30,
+            133
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf_left_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            150,
+            55,
+            30,
+            133
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf_right_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            180,
+            55,
+            30,
+            133
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf_left_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            330,
+            55,
+            30,
+            133
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf_right_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            360,
+            55,
+            30,
+            133
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf_left_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            510,
+            55,
+            30,
+            133
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf_right_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            540,
+            55,
+            30,
+            133
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf_left_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            690,
+            55,
+            30,
+            133
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level1/shelf_right_dusty.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            2,
+            171,
+            30,
+            46
+        ],
+        "state": 3,
+        "texturePaths": [
+            "data/level1/barrel.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            149,
+            163,
+            64,
+            73
+        ],
+        "state": 3,
+        "texturePaths": [
+            "data/level1/boxes.png"
+        ],
+        "zeroLifeTexture": false
+    },
+    {
+        "dstRect": [
+            513,
+            175,
+            60,
+            50
+        ],
+        "state": 3,
+        "texturePaths": [
+            "data/level1/wood_pile.png"
+        ],
+        "zeroLifeTexture": false
+    }
+]

@@ -1,0 +1,10 @@
+{
+    "dstRect": [
+        340,
+        400,
+        40
+    ],
+  "texturePaths": [
+    "data/level3/ball.png"
+  ]
+}

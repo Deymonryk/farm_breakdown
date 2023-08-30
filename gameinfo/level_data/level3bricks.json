@@ -1,0 +1,492 @@
+[
+    {
+        "dstRect": [
+            3,
+            0,
+            110,
+            60
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            113,
+            0,
+            110,
+            60
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            223,
+            0,
+            110,
+            60
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            333,
+            0,
+            55,
+            60
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/fence1.png",
+            "data/level3/fence_outline1.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            388,
+            0,
+            110,
+            60
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            498,
+            0,
+            110,
+            60
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            608,
+            0,
+            110,
+            60
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/fence2.png",
+            "data/level3/fence_outline2.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            3,
+            61,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            168,
+            61,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            333,
+            61,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            498,
+            61,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            663,
+            61,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            3,
+            116,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            168,
+            116,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            333,
+            116,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            498,
+            116,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            663,
+            116,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            3,
+            171,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            168,
+            171,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            333,
+            171,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            498,
+            171,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            663,
+            171,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            3,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            58,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            113,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            168,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            223,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            278,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            333,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            388,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            443,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            498,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            553,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            608,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    },
+    {
+        "dstRect": [
+            663,
+            226,
+            53,
+            51
+        ],
+        "state": 1,
+        "texturePaths": [
+            "data/level3/paving.png",
+            "data/level3/paving_outline.png"
+        ],
+        "zeroLifeTexture": true
+    }
+]

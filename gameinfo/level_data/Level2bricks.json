@@ -1,0 +1,269 @@
+[
+    {
+        "dstRect": [
+            0,
+            0,
+            38,
+            26
+        ],
+        "state": 3,
+      "texturePaths": [
+        "data/level2/column_corner.png"
+      ]
+    },
+    {
+        "dstRect": [
+            682,
+            0,
+            38,
+            26
+        ],
+        "state": 3,
+      "texturePaths": [
+        "data/level2/column_corner.png"
+      ]
+    },
+    {
+        "dstRect": [
+            193,
+            0,
+            68,
+            26
+        ],
+        "state": 3,
+      "texturePaths": [
+        "data/level2/column_back.png"
+      ]
+    },
+    {
+        "dstRect": [
+            420,
+            0,
+            68,
+            26
+        ],
+        "state": 3,
+      "texturePaths": [
+        "data/level2/column_back.png"
+      ]
+    },
+    {
+        "dstRect": [
+            0,
+            171,
+            14,
+            69
+        ],
+        "state": 3,
+      "texturePaths": [
+        "data/level2/column_side.png"
+      ]
+    },
+    {
+        "dstRect": [
+            706,
+            171,
+            14,
+            69
+        ],
+        "state": 3,
+      "texturePaths": [
+        "data/level2/column_side.png"
+      ]
+    },
+    {
+        "dstRect": [
+            14,
+            27,
+            138,
+            60
+        ],
+        "state": 2,
+      "texturePaths": [
+        "data/level2/box_open.png",
+        "data/level2/box_lid.png"
+      ]
+    },
+    {
+        "dstRect": [
+            152,
+            27,
+            138,
+            60
+        ],
+        "state": 2,
+      "texturePaths": [
+        "data/level2/box_open.png",
+        "data/level2/box_lid.png"
+      ]
+    },
+    {
+        "dstRect": [
+            290,
+            27,
+            138,
+            60
+        ],
+        "state": 2,
+      "texturePaths": [
+        "data/level2/box_open.png",
+        "data/level2/box_lid.png"
+      ]
+    },
+    {
+        "dstRect": [
+            428,
+            27,
+            138,
+            60
+        ],
+        "state": 2,
+      "texturePaths": [
+        "data/level2/box_open.png",
+        "data/level2/box_lid.png"
+      ]
+    },
+    {
+        "dstRect": [
+            566,
+            27,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            14,
+            87,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            152,
+            87,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            290,
+            87,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            428,
+            87,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            566,
+            87,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            14,
+            147,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            152,
+            147,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            290,
+            147,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            428,
+            147,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    },
+    {
+        "dstRect": [
+            566,
+            147,
+            138,
+            60
+        ],
+        "state": 2,
+        "texturePaths": [
+            "data/level2/box_open.png",
+            "data/level2/box_lid.png"
+        ]
+    }
+]
